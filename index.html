@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alinea SA de CV - Plataforma de clasificacion arancelaria con inteligencia artificial para comercio exterior en Mexico. Clasificacion HS, LIGIE, VUCEM, CRM y ERP aduanal.">
+    <meta name="theme-color" content="#1e3a8a">
+    <title>Alinea SA de CV - Ecosistema Corporativo de Comercio Exterior</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- PDF.js para extraccion local de archivos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <!-- Chart.js para paneles analiticos de la marca -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Pantalla de Inicio de Sesión Centralizado (Login Central) -->
+    <div class="login-screen" id="login-screen">
+        <div class="login-card">
+            <img src="static/img/logo.png" alt="Alinea Logo" class="login-logo">
+            <div class="login-title">Acceso Centralizado</div>
+            <div class="login-subtitle">Ecosistema de Comercio Exterior</div>
+            
+            <div class="login-error" id="login-error">
+                <span>⚠️</span> <span id="login-error-text">Credenciales incorrectas</span>
+            </div>
+            
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="login-form-group">
+                    <label for="login-user">Usuario / RFC de la Empresa</label>
+                    <div class="login-input-wrapper">
+                        <span class="login-input-icon">👤</span>
+                        <input type="text" id="login-user" class="login-input" placeholder="Ej: admin o RFC corporativo" required>
+                    </div>
+                </div>
+                
+                <div class="login-form-group">
+                    <label for="login-pass">Contraseña</label>
+                    <div class="login-input-wrapper">
+                        <span class="login-input-icon">🔑</span>
+                        <input type="password" id="login-pass" class="login-input" placeholder="••••••••" required>
+                    </div>
+                </div>
+                
+                <div class="login-options">
+                    <label class="login-remember">
+                        <input type="checkbox" checked> Recordarme
+                    </label>
+                    <a href="#" class="login-forgot" onclick="alert('Póngase en contacto con el soporte técnico de ALINEA SOLUTIONS (soporte@alineasolutions.com) para restablecer sus credenciales.')">¿Olvidó su contraseña?</a>
+                </div>
+                
+                <button type="submit" class="login-btn">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <img
+                    src="static/img/logo_light.png"
+                    alt="Alinea"
+                    class="sidebar-logo"
+                    onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='flex'"
+                >
+                <div id="logo-fallback" style="display:none;align-items:center;gap:8px">
+                    <span class="logo-icon">&#x1F9E0;</span>
+                    <h2>Alinea</h2>
+                </div>
+            </div>
+            <p>Ecosistema de Comercio Exterior</p>
+        </div>
+        
+        <div class="sidebar-scroll">
+            <div class="nav-section-title">CONTROL & OPERACIÓN</div>
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-tab="dashboard">
+                    <span class="nav-icon">📊</span> Dashboard
+                </button>
+                <button class="nav-btn" data-tab="crm">
+                    <span class="nav-icon">👤</span> CRM Clientes
+                </button>
+                <button class="nav-btn" data-tab="erp">
+                    <span class="nav-icon">📦</span> ERP Inventario
+                </button>
+                <button class="nav-btn" data-tab="admin">
+                    <span class="nav-icon">🛡️</span> ADMIN Auditoría
+                </button>
+            </nav>
+
+            <div class="nav-section-title">ADUANAS & LOGÍSTICA</div>
+            <nav class="sidebar-nav">
+                <button class="nav-btn" data-tab="ai">
+                    <span class="nav-icon">🤖</span> Clasificador IA
+                </button>
+                <button class="nav-btn" data-tab="vucem-parser">
+                    <span class="nav-icon">🧾</span> VUCEM & XML
+                </button>
+                <button class="nav-btn" data-tab="mve">
+                    <span class="nav-icon">💼</span> Manifestación MVE
+                </button>
+                <button class="nav-btn" data-tab="cartaporte">
+                    <span class="nav-icon">🚚</span> Carta Porte 3.1
+                </button>
+                <button class="nav-btn" data-tab="taxes">
+                    <span class="nav-icon">💰</span> Impuestos Pedimento
+                </button>
+                <button class="nav-btn" data-tab="sat-catalog">
+                    <span class="nav-icon">🏷️</span> Claves SAT (Facturas)
+                </button>
+            </nav>
+
+            <div class="nav-section-title">SISTEMA ARMONIZADO</div>
+            <nav class="sidebar-nav">
+                <button class="nav-btn" data-tab="search">
+                    <span class="nav-icon">🔍</span> Buscar Base Local
+                </button>
+                <button class="nav-btn" data-tab="tree">
+                    <span class="nav-icon">🌳</span> Árbol HS
+                </button>
+                <button class="nav-btn" data-tab="rgi">
+                    <span class="nav-icon">📖</span> Reglas RGI
+                </button>
+                <button class="nav-btn" data-tab="sources">
+                    <span class="nav-icon">🌐</span> Fuentes Oficiales
+                </button>
+                <button class="nav-btn" data-tab="history">
+                    <span class="nav-icon">📜</span> Historial
+                </button>
+                <button class="nav-btn" data-tab="import">
+                    <span class="nav-icon">📥</span> Import/Export
+                </button>
+            </nav>
+        </div>
+        <div class="sidebar-footer">
+            <img src="static/img/logo.png" alt="Alinea" style="height:28px;margin-bottom:6px;opacity:0.7" onerror="this.style.display='none'">
+            <small style="display:block">Alinea SA de CV &mdash; Enterprise v2.0</small>
+            <small style="display:block;color:#4a6fa5;margin-top:2px">ALINEA SOLUTIONS &copy; 2026</small>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- ========================================== -->
+        <!-- Tab: DASHBOARD                             -->
+        <!-- ========================================== -->
+        <div class="tab-content active" id="tab-dashboard">
+            <div class="dashboard-banner">
+                <h1>Ecosistema Corporativo Alinea SA de CV</h1>
+                <p>Centralización inteligente de clasificación arancelaria, cumplimiento aduanero (SAT/VUCEM) y control logístico.</p>
+            </div>
+
+            <!-- Key Metrics Grid -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-info">
+                        <span class="metric-label">Clasificaciones Realizadas</span>
+                        <span class="metric-val" id="dash-total-classifications">--</span>
+                    </div>
+                    <span class="metric-icon">🔍</span>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-info">
+                        <span class="metric-label">Clientes en CRM</span>
+                        <span class="metric-val" id="dash-total-clients">--</span>
+                    </div>
+                    <span class="metric-icon">🏢</span>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-info">
+                        <span class="metric-label">SKUs en Almacén Fiscal</span>
+                        <span class="metric-val" id="dash-total-skus">--</span>
+                    </div>
+                    <span class="metric-icon">📦</span>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-info">
+                        <span class="metric-label">Cartas Porte Emitidas</span>
+                        <span class="metric-val" id="dash-total-cartas">--</span>
+                    </div>
+                    <span class="metric-icon">🚚</span>
+                </div>
+            </div>
+
+            <!-- Analytical Charts Grid -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Distribución de Clasificaciones por Sección</h3>
+                    <div class="chart-container">
+                        <canvas id="chart-donacion"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Volumen de Operaciones Mensuales (Simulado)</h3>
+                    <div class="chart-container">
+                        <canvas id="chart-operaciones"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Audit Log Activity -->
+            <div class="card" style="margin-top:20px">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px">
+                    <h3 style="margin:0">Actividad Reciente del Ecosistema (Auditoría)</h3>
+                    <button class="btn-secondary" style="padding:4px 10px;font-size:12px" onclick="loadDashboardAudit()">Actualizar</button>
+                </div>
+                <div style="overflow-y:auto;max-height:220px;border:1px solid var(--border);border-radius:8px">
+                    <table style="width:100%;border-collapse:collapse;font-size:12.5px" id="dash-audit-table">
+                        <thead>
+                            <tr style="background:rgba(255,255,255,0.02);border-bottom:1px solid var(--border);color:var(--text-light)">
+                                <th style="padding:10px;text-align:left">Fecha</th>
+                                <th style="padding:10px;text-align:left">Módulo</th>
+                                <th style="padding:10px;text-align:left">Acción</th>
+                                <th style="padding:10px;text-align:left">Detalles</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dash-audit-body">
+                            <!-- Se carga dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Propuesta de Valor y Portafolio de Servicios (Kit de Marca Oficial) -->
+            <div class="card" style="margin-top:20px; text-align:center; background:rgba(13,27,56,0.5)">
+                <h3 style="margin-top:0; margin-bottom:8px; color:var(--primary); text-align:left">Propuesta de Valor & Servicios de Alinea</h3>
+                <p style="color:var(--text-secondary); text-align:left; font-size:13px; margin-bottom:20px">
+                    Ecosistema digital integrado con las soluciones y consultoría especializada de Alinea SA de CV para el cumplimiento aduanero, fiscal y legal.
+                </p>
+                <div style="display:flex; justify-content:center; align-items:center; width:100%">
+                    <img 
+                        src="static/img/servicios.png" 
+                        alt="Portafolio de Servicios de Alinea" 
+                        style="max-width:100%; height:auto; border-radius:10px; border:1px solid var(--border); box-shadow:0 10px 30px rgba(0,0,0,0.4); filter:brightness(0.95)"
+                        onerror="this.style.display='none'"
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: CRM CLIENTES                          -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-crm">
+            <div class="card">
+                <h1>CRM - Gestión de Importadores y Exportadores</h1>
+                <p class="subtitle">Administre los datos fiscales de sus clientes, patentes asociadas y agentes aduanales.</p>
+                
+                <div class="crm-layout" style="display:grid;grid-template-columns:1fr 280px;gap:20px">
+                    <!-- Client list table -->
+                    <div>
+                        <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px">
+                            <table style="width:100%;border-collapse:collapse;font-size:13px">
+                                <thead>
+                                    <tr style="background:rgba(255,255,255,0.02);border-bottom:2px solid var(--border)">
+                                        <th style="padding:12px;text-align:left">Razón Social</th>
+                                        <th style="padding:12px;text-align:left">RFC</th>
+                                        <th style="padding:12px;text-align:left">Patente</th>
+                                        <th style="padding:12px;text-align:left">Agente Aduanal</th>
+                                        <th style="padding:12px;text-align:left">Estatus</th>
+                                        <th style="padding:12px;text-align:center">Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="crm-clients-body">
+                                    <!-- Se llena vía JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Client creation form -->
+                    <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px;padding:20px">
+                        <h3 style="margin-top:0;margin-bottom:15px;color:var(--primary)">Registrar Cliente</h3>
+                        <div class="form-group">
+                            <label for="crm-rfc">RFC *</label>
+                            <input type="text" id="crm-rfc" placeholder="Ej. SOL890412AA1">
+                        </div>
+                        <div class="form-group">
+                            <label for="crm-name">Razón Social *</label>
+                            <input type="text" id="crm-name" placeholder="Ej. ALINEA S.A.S.">
+                        </div>
+                        <div class="form-group">
+                            <label for="crm-patent">Patente Aduanal</label>
+                            <input type="text" id="crm-patent" placeholder="Ej. 3589" maxlength="4">
+                        </div>
+                        <div class="form-group">
+                            <label for="crm-agent">Agente Aduanal</label>
+                            <input type="text" id="crm-agent" placeholder="Nombre del Lic.">
+                        </div>
+                        <button id="crm-save-btn" class="btn-primary" style="width:100%;margin-top:10px">Guardar Cliente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: ERP INVENTARIO                        -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-erp">
+            <div class="card">
+                <h1>ERP - Inventario de Almacén Fiscal</h1>
+                <p class="subtitle">Monitoreo de mercancías almacenadas, vinculación de códigos SAT y generación rápida de Carta Porte.</p>
+                
+                <div class="erp-layout" style="display:grid;grid-template-columns:1fr 280px;gap:20px">
+                    <!-- Inventory list table -->
+                    <div>
+                        <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px">
+                            <table style="width:100%;border-collapse:collapse;font-size:13px">
+                                <thead>
+                                    <tr style="background:rgba(255,255,255,0.02);border-bottom:2px solid var(--border)">
+                                        <th style="padding:12px;text-align:left">SKU</th>
+                                        <th style="padding:12px;text-align:left">Descripción</th>
+                                        <th style="padding:12px;text-align:left">Clave SAT</th>
+                                        <th style="padding:12px;text-align:left">Unidad</th>
+                                        <th style="padding:12px;text-align:right">Stock</th>
+                                        <th style="padding:12px;text-align:right">P. Unitario</th>
+                                        <th style="padding:12px;text-align:center">Operación rápida</th>
+                                        <th style="padding:12px;text-align:center">Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="erp-inventory-body">
+                                    <!-- Se llena vía JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Item creation form -->
+                    <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px;padding:20px">
+                        <h3 style="margin-top:0;margin-bottom:15px;color:var(--primary)">Añadir Mercancía</h3>
+                        <div class="form-group">
+                            <label for="erp-sku">SKU *</label>
+                            <input type="text" id="erp-sku" placeholder="Ej. LAP-THINK-001">
+                        </div>
+                        <div class="form-group">
+                            <label for="erp-desc">Descripción *</label>
+                            <input type="text" id="erp-desc" placeholder="Nombre comercial de mercancía">
+                        </div>
+                        <div class="form-group">
+                            <label for="erp-satcode">Clave SAT *</label>
+                            <input type="text" id="erp-satcode" placeholder="Ej. 8471.30.01">
+                        </div>
+                        <div class="form-group">
+                            <label for="erp-unit">Unidad SAT</label>
+                            <input type="text" id="erp-unit" placeholder="Ej. H87" value="H87">
+                        </div>
+                        <div class="form-group">
+                            <label for="erp-qty">Cantidad inicial</label>
+                            <input type="number" id="erp-qty" value="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="erp-price">Precio unitario ($)</label>
+                            <input type="number" id="erp-price" value="100.00" step="0.01">
+                        </div>
+                        <button id="erp-save-btn" class="btn-primary" style="width:100%;margin-top:10px">Agregar al Almacén</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: ADMIN AUDITORÍA                       -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-admin">
+            <div class="card">
+                <h1>ADMIN - Gobernanza, Seguridad y Bóveda</h1>
+                <p class="subtitle">Bitácora oficial de auditoría ante el SAT/AGA, gestión de llaves e.firma en Secret Manager y Roles.</p>
+
+                <!-- Top Vault Card -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:25px;flex-wrap:wrap">
+                    <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:12px;padding:20px">
+                        <h3 style="margin-top:0;display:flex;align-items:center;gap:8px;color:#10b981">
+                            <span>🔑</span> Criptografía y Secret Vault (Google Secret Manager)
+                        </h3>
+                        <div style="font-size:12.5px;line-height:1.6;margin-bottom:15px">
+                            <div><strong>Bóveda:</strong> <span style="font-family:monospace;color:white">projects/alinea-ia/secrets/e-firmas</span></div>
+                            <div><strong>Algoritmo:</strong> AES-256-GCM (Cifrado en reposo y tránsito)</div>
+                            <div><strong>Seguridad IAM:</strong> Roles estrictos de acceso restringido por firma.</div>
+                        </div>
+                        <div id="admin-vault-container" style="display:flex;flex-direction:column;gap:8px">
+                            <!-- Se carga vía JS -->
+                        </div>
+                    </div>
+                    
+                    <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:12px;padding:20px">
+                        <h3 style="margin-top:0;color:var(--primary)">Control de Acceso Basado en Roles (RBAC)</h3>
+                        <div style="overflow-x:auto;font-size:12px">
+                            <table style="width:100%;border-collapse:collapse">
+                                <thead>
+                                    <tr style="border-bottom:1px solid var(--border);color:var(--text-light)">
+                                        <th style="padding:6px;text-align:left">Rol</th>
+                                        <th style="padding:6px;text-align:center">Clasificar</th>
+                                        <th style="padding:6px;text-align:center">Firmar VUCEM</th>
+                                        <th style="padding:6px;text-align:center">Timbrar C.Porte</th>
+                                        <th style="padding:6px;text-align:center">Ver Auditoría</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+                                        <td style="padding:6px"><strong>Administrador</strong></td>
+                                        <td style="padding:6px;text-align:center">✔️</td>
+                                        <td style="padding:6px;text-align:center">✔️</td>
+                                        <td style="padding:6px;text-align:center">✔️</td>
+                                        <td style="padding:6px;text-align:center">✔️</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+                                        <td style="padding:6px"><strong>Agente Aduanal</strong></td>
+                                        <td style="padding:6px;text-align:center">✔️</td>
+                                        <td style="padding:6px;text-align:center">✔️</td>
+                                        <td style="padding:6px;text-align:center">❌</td>
+                                        <td style="padding:6px;text-align:center">❌</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:6px"><strong>Auditor</strong></td>
+                                        <td style="padding:6px;text-align:center">❌</td>
+                                        <td style="padding:6px;text-align:center">❌</td>
+                                        <td style="padding:6px;text-align:center">❌</td>
+                                        <td style="padding:6px;text-align:center">✔️</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Audit Log Table -->
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px">
+                    <h2>Bitácora de Auditoría Normativa (Historial Completo)</h2>
+                    <button class="btn-primary" id="admin-refresh-audit-btn">Refrescar Bitácora</button>
+                </div>
+                <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px">
+                    <table style="width:100%;border-collapse:collapse;font-size:12.5px" id="admin-audit-table">
+                        <thead>
+                            <tr style="background:rgba(255,255,255,0.02);border-bottom:2px solid var(--border)">
+                                <th style="padding:10px;text-align:left">ID</th>
+                                <th style="padding:10px;text-align:left">Fecha</th>
+                                <th style="padding:10px;text-align:left">Usuario</th>
+                                <th style="padding:10px;text-align:left">Módulo</th>
+                                <th style="padding:10px;text-align:left">Acción Realizada</th>
+                                <th style="padding:10px;text-align:left">Detalles Técnicos</th>
+                                <th style="padding:10px;text-align:left">IP Origen</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-audit-body">
+                            <!-- Se llena vía JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: CLASIFICADOR IA (PDF)                 -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-ai">
+            <div class="card">
+                <h1>Clasificación Arancelaria con IA</h1>
+                <p class="subtitle">Use inteligencia artificial para sugerir el código arancelario, NICO, RRNAs y tasas de impuestos. Puede ingresar texto o arrastrar una ficha técnica en PDF.</p>
+                <!-- Panel de Configuración de Gemini API Key para modo Estático -->
+                <div style="background: rgba(30, 41, 59, 0.45); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; gap: 15px;">
+                    <div style="flex: 1;">
+                        <span style="font-size: 13px; font-weight: 600; color: #38bdf8; display: flex; align-items: center; gap: 6px;">
+                            <span>🔑</span> Configuración de Gemini API Key (Local/Estático)
+                        </span>
+                        <p style="font-size: 11px; margin: 2px 0 0 0; color: var(--text-secondary);">Requerido para realizar la clasificación interactiva con Inteligencia Artificial desde tu navegador.</p>
+                    </div>
+                    <input type="password" id="gemini-api-key-input" class="login-input" placeholder="AIzaSy..." style="width: 280px; margin: 0; padding: 6px 12px; font-size: 12px; border-radius: 6px;" onchange="saveGeminiApiKey(this.value)">
+                </div>
+
+                
+                <div class="ai-input">
+                    <!-- Toggle Individual vs Batch (CAAAREM TI) -->
+                    <div style="display:flex; gap:10px; margin-bottom:15px; border-bottom:1px solid var(--border); padding-bottom:10px">
+                        <button type="button" id="ai-toggle-single-btn" class="btn-primary" style="flex:1; font-weight:600; padding:8px 0; font-size:12px; border-radius:6px">Clasificación Individual y Merciología</button>
+                        <button type="button" id="ai-toggle-batch-btn" class="btn-secondary" style="flex:1; font-weight:600; padding:8px 0; font-size:12px; border-radius:6px">Multiclasificador por Lote (Masivo)</button>
+                    </div>
+
+                    <!-- Individual Classifier Container -->
+                    <div id="ai-container-single" style="display:flex; flex-direction:column; gap:15px">
+                        <!-- Chat Window Container -->
+                        <div class="chat-window-wrapper">
+                            <div class="chat-header">
+                                <div class="chat-header-info">
+                                    <span class="chat-status-indicator"></span>
+                                    <div class="chat-header-text">
+                                        <h3>Asistente de Clasificación Alinea</h3>
+                                        <p>Clasificador y Merciología en Tiempo Real</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-chat-reset" id="btn-chat-reset" title="Reiniciar Conversación">
+                                    <span>🔄</span> Reiniciar
+                                </button>
+                            </div>
+                            
+                            <!-- Messages Area -->
+                            <div class="chat-messages" id="chat-messages">
+                                <div class="message message-bot">
+                                    <div class="message-bubble">
+                                        ¡Hola! Soy el asistente conversacional de <strong>ALINEA SOLUTIONS</strong>.<br><br>
+                                        Describe la mercancía que deseas importar o exportar de forma detallada (material, uso, composición, etc.) o bien carga una ficha técnica en PDF o foto del producto a continuación.
+                                    </div>
+                                    <span class="message-time">Ahora</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Quick Options Container -->
+                            <div class="chat-quick-options" id="chat-quick-options" style="display:none">
+                                <!-- Botones de opciones rápidas renderizados dinámicamente -->
+                            </div>
+                            
+                            <!-- Chat Input Area -->
+                            <div class="chat-input-container">
+                                <textarea id="chat-input" placeholder="Escriba la descripción del producto o responda aquí..." rows="2"></textarea>
+                                <button type="button" id="chat-send-btn" class="chat-send-btn" title="Enviar Mensaje">
+                                    <span class="chat-send-icon">➔</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Dropzones integrados compactos -->
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">
+                            <!-- Dropzone de Ficha Técnica PDF -->
+                            <div id="ai-pdf-dropzone" class="vucem-dropzone" style="padding:10px;border-style:dashed;border-color:var(--primary);cursor:pointer;min-height:auto;flex-direction:row;align-items:center;justify-content:center;gap:10px">
+                                <span style="font-size:18px">📄</span>
+                                <div style="text-align:left">
+                                    <h3 style="font-size:12px;margin:0">Ficha Técnica en PDF</h3>
+                                    <p style="font-size:10px;margin:0;color:var(--text-secondary)">Suelte PDF aquí o haga clic</p>
+                                </div>
+                                <input type="file" id="ai-pdf-input" accept=".pdf" style="display:none">
+                            </div>
+                            
+                            <!-- Dropzone de Foto/Imagen de Producto -->
+                            <div id="ai-image-dropzone" class="vucem-dropzone" style="padding:10px;border-style:dashed;border-color:var(--secondary);cursor:pointer;min-height:auto;flex-direction:row;align-items:center;justify-content:center;gap:10px">
+                                <span style="font-size:18px">📷</span>
+                                <div style="text-align:left">
+                                    <h3 style="font-size:12px;margin:0">Foto del Producto</h3>
+                                    <p style="font-size:10px;margin:0;color:var(--text-secondary)">Suelte imagen aquí o haga clic</p>
+                                </div>
+                                <input type="file" id="ai-image-input" accept="image/*" style="display:none">
+                                <div id="ai-image-preview" style="display:none;margin-left:8px;"><img src="" style="max-height:30px;border-radius:4px;border:1px solid var(--border)"></div>
+                            </div>
+                        </div>
+
+                        <!-- Botón para validar descripción (Anexo 22) -->
+                        <div style="display:grid; grid-template-columns: 1fr; gap:10px">
+                            <button type="button" id="ai-validate-desc-btn" class="btn-secondary" style="width:100%;font-weight:600;border-color:#eab308;color:#f59e0b;background:rgba(234,179,8,0.08);margin:0;padding:8px">
+                                🔍 Validar Anexo 22 de la Descripción actual
+                            </button>
+                        </div>
+
+                        <!-- Panel del Validador de Descripciones -->
+                        <div id="ai-desc-validation-box" style="display:none; background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:15px">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px">
+                                <h4 style="margin:0; font-size:13px; color:white">Auditoría de Descripción Anexo 22</h4>
+                                <span id="ai-desc-validation-score" class="badge badge-high" style="font-size:11px; padding:4px 8px">Calidad: --/100</span>
+                            </div>
+                            <div id="ai-desc-validation-status" style="font-size:12px; font-weight:600; margin-bottom:8px"></div>
+                            <ul id="ai-desc-validation-warnings" style="margin:0 0 10px 0; padding-left:15px; font-size:11.5px; color:#f87171; line-height:1.5"></ul>
+                            <div style="font-size:11.5px; border-top:1px dashed rgba(255,255,255,0.05); padding-top:8px">
+                                <strong style="color:#60a5fa; display:block; margin-bottom:4px">Acciones Recomendadas para evitar multas:</strong>
+                                <ul id="ai-desc-validation-suggestions" style="margin:0; padding-left:15px; color:var(--text-light); line-height:1.5"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Batch Classifier Container (CAAAREM Multiclasificador) -->
+                    <div id="ai-container-batch" style="display:none; flex-direction:column; gap:15px">
+                        <div style="background:rgba(255,255,255,0.01); border:1px solid var(--border); border-radius:12px; padding:15px">
+                            <h4 style="margin:0 0 8px; color:var(--primary)">Ingreso Masivo de Descripciones</h4>
+                            <p style="font-size:11.5px; color:var(--text-light); margin-bottom:10px">Ingrese hasta 100 descripciones de mercancías (una por línea) para precodificarlas de forma automatizada:</p>
+                            <textarea id="ai-batch-input" rows="8" placeholder="Ejemplo:&#10;Laptop Lenovo Core i7 16GB&#10;Tequila añejo reposado 750ml&#10;Naranjas valencia frescas&#10;Camisetas de algodón hombre 100%"></textarea>
+                            <button id="ai-batch-btn" class="btn-primary" style="width:100%; margin-top:10px; font-weight:600">Procesar Lote Completo (Multiclasificador)</button>
+                        </div>
+                        <div id="ai-batch-status" class="ai-status"></div>
+                        <div id="ai-batch-results-box" style="display:none; margin-top:10px">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px">
+                                <h4 style="margin:0; color:white">Precodificaciones del Lote</h4>
+                                <button type="button" id="ai-batch-export-btn" class="btn-secondary" style="padding:4px 10px; font-size:11.5px; border-color:#10b981; color:#10b981; background:rgba(16,185,129,0.1)">Exportar a Excel (CSV)</button>
+                            </div>
+                            <div style="overflow-x:auto; border:1px solid var(--border); border-radius:8px">
+                                <table style="width:100%; border-collapse:collapse; font-size:11.5px; text-align:left">
+                                    <thead>
+                                        <tr style="background:rgba(255,255,255,0.03); border-bottom:1px solid var(--border); color:var(--text-light)">
+                                            <th style="padding:8px 10px; width:40px">#</th>
+                                            <th style="padding:8px 10px">Descripción Declarada</th>
+                                            <th style="padding:8px 10px; width:90px">Fracción</th>
+                                            <th style="padding:8px 10px; width:180px">Descripción del SAT</th>
+                                            <th style="padding:8px 10px; width:70px; text-align:center">Confianza</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="ai-batch-tbody">
+                                        <!-- Se llena vía JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ai-status" class="ai-status"></div>
+                
+                <!-- Expanded results with NICO, taxes and RRNA -->
+                <div id="ai-extended-results" style="display:none;margin-top:20px">
+                    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:20px;flex-wrap:wrap">
+                        
+                        <!-- Left Block: Code, NICO and Reasoning -->
+                        <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:12px;padding:20px">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px">
+                                <h3 style="margin:0;color:var(--primary)">Sugerencia de Fracción</h3>
+                                <span class="badge badge-high" id="ai-res-badge">Confianza: --</span>
+                            </div>
+                            
+                            <div style="font-size:24px;font-weight:800;color:white;margin-bottom:10px" id="ai-res-code">----.--.--</div>
+                            
+                            <div style="font-size:14px;margin-bottom:20px">
+                                <strong>NICO Sugerido:</strong> <span style="font-family:monospace;color:var(--secondary);font-weight:bold" id="ai-res-nico">----.--.-- - --</span>
+                            </div>
+                            
+                            <div style="border-top:1px solid var(--border);padding-top:15px">
+                                <h4>Razonamiento Jurídico / Notas Explicativas:</h4>
+                                <p style="font-size:12.5px;color:var(--text-light);line-height:1.5;margin-top:8px" id="ai-res-reasoning">--</p>
+                            </div>
+
+                            <div style="border-top:1px solid var(--border);padding-top:15px;margin-top:15px;display:none" id="ai-alternatives-box">
+                                <h4 style="margin-bottom:8px">Dictámenes Alternativos (Compara Opciones):</h4>
+                                <p style="font-size:11.5px;color:var(--text-secondary);margin-bottom:12px">Haga clic en cualquier opción alternativa para recalcular de forma dinámica sus aranceles, normativas (RRNA) y fundamentación legal:</p>
+                                <div id="ai-alternatives-list" style="display:flex;flex-direction:column;gap:8px"></div>
+                            </div>
+                            
+                            <div style="margin-top:20px" id="ai-res-action-container">
+                                <!-- Se agrega botón de Guardar vía JS -->
+                            </div>
+                        </div>
+
+                        <!-- Right Block: Taxes and RRNA -->
+                        <div style="display:flex;flex-direction:column;gap:20px">
+                            
+                            <!-- Tax calculations -->
+                            <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:12px;padding:20px">
+                                <h3 style="margin:0 0 15px;color:var(--primary)">Gravámenes y Tasas Estimadas</h3>
+                                <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
+                                    <div style="display:flex;justify-content:space-between"><span>Impuesto General Importación (IGI):</span><strong id="tax-igi">--</strong></div>
+                                    <div style="display:flex;justify-content:space-between"><span>Impuesto al Valor Agregado (IVA):</span><strong id="tax-iva">--</strong></div>
+                                    <div style="display:flex;justify-content:space-between"><span>IEPS Aduanero:</span><strong id="tax-ieps">--</strong></div>
+                                    <div style="display:flex;justify-content:space-between"><span>Derecho Trámite Aduanero (DTA):</span><strong>8 al millar (0.8%)</strong></div>
+                                    <div style="display:flex;justify-content:space-between"><span>Prevalidación (SAT):</span><strong>$310.00 MXN</strong></div>
+                                </div>
+                            </div>
+
+                            <!-- RRNA List -->
+                            <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:12px;padding:20px">
+                                <h3 style="margin:0 0 10px;color:#f59e0b">Restricciones No Arancelarias (RRNA)</h3>
+                                <ul style="margin:0;padding-left:20px;font-size:12.5px;line-height:1.6" id="rrna-list">
+                                    <!-- Se llena vía JS -->
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ai-results" class="results-container" style="margin-top:15px"></div>
+            </div>
+
+            <!-- Registro de Manifestaciones Emitidas -->
+            <div class="card" style="margin-top:20px">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px">
+                    <h3 style="margin:0">Registro de Manifestaciones Emitidas</h3>
+                    <button class="btn-secondary" style="padding:4px 10px;font-size:12px" onclick="loadMveList()">Actualizar</button>
+                </div>
+                <div style="overflow-y:auto;max-height:250px;border:1px solid var(--border);border-radius:8px">
+                    <table style="width:100%;border-collapse:collapse;font-size:12.5px" id="mve-history-table">
+                        <thead>
+                            <tr style="background:rgba(255,255,255,0.02);border-bottom:1px solid var(--border);color:var(--text-light)">
+                                <th style="padding:10px;text-align:left">Fecha</th>
+                                <th style="padding:10px;text-align:left">Folio (e-Document)</th>
+                                <th style="padding:10px;text-align:left">RFC Importador</th>
+                                <th style="padding:10px;text-align:left">Valor Aduana (MXN)</th>
+                                <th style="padding:10px;text-align:left">Estatus</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mve-history-body">
+                            <!-- Se carga dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: CARTA PORTE                           -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-cartaporte">
+            <div class="card">
+                <h1>Carta Porte 3.1 & Gestión Logística</h1>
+                <p class="subtitle">Emisión y timbrado digital del complemento de Carta Porte 3.1. Validación automática contra catálogos vigentes del SAT.</p>
+
+                <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:20px;flex-wrap:wrap">
+                    <!-- Formulario de timbrado -->
+                    <div style="background:rgba(255,255,255,0.01);border:1px solid var(--border);border-radius:12px;padding:20px">
+                        <h3 style="margin-top:0;margin-bottom:15px;color:var(--primary)">Emitir Carta Porte 3.1</h3>
+                        
+                        <div class="form-grid">
+                            <div class="form-group" style="grid-column: span 2">
+                                <label for="cp-erp-select">Vincular Artículo de Inventario (ERP - Opcional)</label>
+                                <select id="cp-erp-select" onchange="handleCpErpSelect(this)" style="padding:10px;border-radius:8px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:white;width:100%;outline:none">
+                                    <option value="">-- Seleccionar artículo para descontar stock automáticamente --</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="cp-qty-group" style="display:none">
+                                <label for="cp-qty">Cantidad a Transportar *</label>
+                                <input type="number" id="cp-qty" min="1" value="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="cp-origin">Dirección Origen *</label>
+                                <input type="text" id="cp-origin" value="Almacén Fiscal Laredo, Carr. Nacional Km 12, Tamaulipas">
+                            </div>
+                            <div class="form-group">
+                                <label for="cp-dest">Dirección Destino *</label>
+                                <input type="text" id="cp-dest" value="Bodega Alinea, Av. Universidad 1200, CDMX">
+                            </div>
+                            <div class="form-group" id="cp-goods-group" style="grid-column: span 2">
+                                <label for="cp-goods">Descripción Mercancía *</label>
+                                <div style="display:flex; gap:8px">
+                                    <input type="text" id="cp-goods" placeholder="Ej. Laptops Lenovo Thinkpad" style="flex:1">
+                                    <button type="button" id="cp-validate-desc-btn" class="btn-secondary" style="padding:0 12px; font-size:11px; border-color:#eab308; color:#f59e0b; background:rgba(234,179,8,0.08); margin:0; white-space:nowrap">🔍 Validar A22</button>
+                                </div>
+                            </div>
+                            <div id="cp-desc-val-box" style="display:none; grid-column: span 2; background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:8px; padding:10px; font-size:11.5px"></div>
+                            <div class="form-group">
+                                <label for="cp-satcode">Clave de Producto SAT *</label>
+                                <input type="text" id="cp-satcode" placeholder="Ej. 8471.30.01" value="8471.30.01">
+                            </div>
+                            <div class="form-group">
+                                <label for="cp-satunit">Clave Unidad SAT *</label>
+                                <input type="text" id="cp-satunit" placeholder="Ej. H87" value="H87">
+                            </div>
+                            <div class="form-group">
+                                <label for="cp-config">Configuración Vehicular *</label>
+                                <select id="cp-config">
+                                    <option value="C2">C2 - Camión Rígido de 2 llantas en eje delantero y 4 en trasero</option>
+                                    <option value="T3S2">T3S2 - Tractocamión de 3 ejes con semirremolque de 2 ejes</option>
+                                    <option value="C3">C3 - Camión Rígido de 3 ejes</option>
+                                    <option value="T3S3">T3S3 - Tractocamión de 3 ejes con semirremolque de 3 ejes</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Error List Container -->
+                        <div id="cp-validation-errors-box" style="display:none;background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);color:#ef4444;padding:15px;border-radius:8px;margin-top:15px;font-size:12px">
+                            <strong>Errores de Pre-validación del SAT:</strong>
+                            <ul id="cp-validation-errors-ul" style="margin-top:5px;padding-left:20px;margin-bottom:0"></ul>
+                        </div>
+
+                        <button id="cp-generate-btn" class="btn-primary" style="width:100%;margin-top:20px;font-weight:600">Pre-Validar y Timbrar Carta Porte 3.1</button>
+                    </div>
+
+                    <!-- Listado de Cartas Porte Timbradas -->
+                    <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:12px;padding:20px">
+                        <h3 style="margin-top:0;margin-bottom:15px">Complementos Timbrados Recientes</h3>
+                        <div style="overflow-y:auto;max-height:350px">
+                            <div id="cp-list-container" style="display:flex;flex-direction:column;gap:10px">
+                                <!-- Cargado vía JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: VUCEM & XML (Visor y Acuses)          -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-vucem-parser">
+            <div class="card">
+                <h1>Visor de XMLs y Administración de Acuses VUCEM</h1>
+                <p class="subtitle">Cargue sus facturas XML o consulte el estado de las validaciones aduaneras de sus acuses en segundo plano.</p>
+
+                <!-- Grid de validación en vivo de acuses en VUCEM -->
+                <div style="border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:25px;background:rgba(255,255,255,0.01)">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;flex-wrap:wrap;gap:10px">
+                        <h2 style="margin:0;font-size:16px;color:var(--primary)">Bandeja de Validación de Acuses en VUCEM (SAT)</h2>
+                        <button class="btn-secondary" style="padding:6px 12px;font-size:12px" id="vucem-refresh-btn">Sincronizar Estatus SAT</button>
+                    </div>
+                    
+                    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px">
+                        <table style="width:100%;border-collapse:collapse;font-size:12.5px" id="vucem-acuses-table">
+                            <thead>
+                                <tr style="background:rgba(255,255,255,0.02);border-bottom:1px solid var(--border)">
+                                    <th style="padding:10px;text-align:left">Folio Documento</th>
+                                    <th style="padding:10px;text-align:left">Tipo</th>
+                                    <th style="padding:10px;text-align:left">RFC Importador</th>
+                                    <th style="padding:10px;text-align:left">Estado Validación</th>
+                                    <th style="padding:10px;text-align:left">Detalles de Errores SAT</th>
+                                    <th style="padding:10px;text-align:left">Fecha Envío</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vucem-acuses-tbody">
+                                <!-- Se llena dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Original Dropzones -->
+                <div class="vucem-dropzones-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:25px;flex-wrap:wrap">
+                    <!-- Dropzone XML -->
+                    <div id="xml-dropzone" class="vucem-dropzone">
+                        <div class="dropzone-icon">📁</div>
+                        <h3>Factura Comercial en XML</h3>
+                        <p>Arrastre el XML de la factura o haga clic para buscar</p>
+                        <span style="font-size:11px;color:var(--text-light)">Soporta CFDIs de Comercio Exterior</span>
+                        <input type="file" id="xml-file-input" accept=".xml" style="display:none">
+                    </div>
+
+                    <!-- Dropzone PDF -->
+                    <div id="acuse-dropzone" class="vucem-dropzone">
+                        <div class="dropzone-icon">📄</div>
+                        <h3>Acuse VUCEM en PDF</h3>
+                        <p>Arrastre el PDF del acuse o haga clic para buscar</p>
+                        <span style="font-size:11px;color:var(--text-light)">Extrae e-Documents y folios de COVE</span>
+                        <input type="file" id="acuse-file-input" accept=".pdf" style="display:none">
+                    </div>
+                </div>
+
+                <!-- VUCEM PDF Converter & Optimizer Tool -->
+                <div class="card" style="margin-top:20px; margin-bottom:25px; border:1px solid rgba(16,185,129,0.25); background:rgba(16,185,129,0.01)">
+                    <h3 style="margin-top:0; color:#10b981; display:flex; align-items:center; gap:8px">
+                        <span>🛠️</span> Optimizador y Convertidor de PDF para VUCEM (e-Document)
+                    </h3>
+                    <p style="font-size:12.5px; color:var(--text-secondary); margin-bottom:15px">
+                        La Ventanilla Única (VUCEM) requiere que los archivos PDF tengan un peso inferior a <strong>3.0 MB</strong>, estén desencriptados, no contengan código JavaScript ni elementos activos. Utilice esta herramienta para comprimir y limpiar sus PDFs de manera automática o convertir imágenes (facturas escaneadas en PNG/JPG) a PDFs compatibles.
+                    </p>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; flex-wrap:wrap">
+                        <!-- Dropzone para Optimización -->
+                        <div id="vucem-opt-dropzone" class="vucem-dropzone" style="border-color:#10b981; border-style:dashed; cursor:pointer; padding:20px; text-align:center">
+                            <div style="font-size:28px">📤</div>
+                            <h4 style="margin:8px 0 4px; font-size:14px">Subir PDF o Imagen</h4>
+                            <p style="font-size:11px; margin:0">Arrastre aquí el archivo o haga clic para seleccionar</p>
+                            <span style="font-size:10px; color:var(--text-light)">Formatos: PDF, PNG, JPG, JPEG, WEBP</span>
+                            <input type="file" id="vucem-opt-input" accept=".pdf,image/*" style="display:none">
+                        </div>
+
+                        <!-- Panel de Opciones y Resultados -->
+                        <div style="background:rgba(0,0,0,0.15); border:1px solid var(--border); border-radius:10px; padding:15px; display:flex; flex-direction:column; justify-content:space-between">
+                            <div>
+                                <h4 style="margin-top:0; margin-bottom:10px; font-size:13px; color:white">Configuración de Optimización</h4>
+                                <label style="display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text-light); cursor:pointer">
+                                    <input type="checkbox" id="vucem-opt-grayscale"> Forzar escala de grises (B&N) para máxima compresión
+                                </label>
+                            </div>
+
+                            <div id="vucem-opt-result" style="display:none; margin-top:15px; border-top:1px solid rgba(255,255,255,0.08); padding-top:12px">
+                                <strong style="font-size:12px; color:#10b981; display:block; margin-bottom:8px">¡Optimización Exitosa!</strong>
+                                <div style="font-size:11.5px; display:flex; flex-direction:column; gap:5px; color:var(--text-light)">
+                                    <div style="display:flex; justify-content:space-between"><span>Archivo original:</span><span id="vucem-opt-res-name" style="word-break:break-all; text-align:right">--</span></div>
+                                    <div style="display:flex; justify-content:space-between"><span>Tamaño original:</span><span id="vucem-opt-res-orig">--</span></div>
+                                    <div style="display:flex; justify-content:space-between"><span>Tamaño optimizado:</span><span id="vucem-opt-res-opt">--</span></div>
+                                    <div style="display:flex; justify-content:space-between"><span>Porcentaje de ahorro:</span><strong id="vucem-opt-res-pct" style="color:#10b981">--</strong></div>
+                                </div>
+                                <div style="margin-top:12px; display:flex; justify-content:space-between; align-items:center; font-size:11px; background:rgba(16,185,129,0.08); padding:6px 10px; border-radius:4px; border:1px solid rgba(16,185,129,0.15)">
+                                    <span>Cumplimiento e-Doc:</span>
+                                    <strong style="color:#10b981">Cumple (100% VUCEM Ready)</strong>
+                                </div>
+                                <a id="vucem-opt-download-btn" href="#" class="btn-primary" style="margin-top:12px; width:100%; display:block; text-align:center; padding:8px 0; text-decoration:none; font-size:12px">Descargar PDF Optimizado</a>
+                            </div>
+
+                            <div id="vucem-opt-loading" style="display:none; text-align:center; padding:20px">
+                                <div class="spinner" style="margin:0 auto 10px; border-top-color:#10b981"></div>
+                                <span style="font-size:12px; color:var(--text-light)">Procesando, comprimiendo y sanitizando archivo...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notificación de estado de carga -->
+                <div id="vucem-parser-status" class="import-status" style="display:none;margin-bottom:20px"></div>
+
+                <!-- Resultados XML -->
+                <div id="xml-results-panel" style="display:none;border:1px solid var(--border);border-radius:12px;padding:20px;background:rgba(255,255,255,0.01)">
+                    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:20px;flex-wrap:wrap;gap:10px">
+                        <h2 style="margin:0;font-size:16px;color:var(--primary)">Datos Factura XML Parseada</h2>
+                        <div style="display:flex;gap:10px">
+                            <button id="xml-transfer-mve-btn" class="btn-primary" style="padding:6px 12px;font-size:12px">Transferir a Wizard MVE</button>
+                            <button id="xml-to-vucem-btn" class="btn-secondary" style="padding:6px 12px;font-size:12px;background:#10b981;color:white">Validar en VUCEM</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:15px;margin-bottom:20px;font-size:12.5px">
+                        <div><strong>Folio/UUID:</strong> <span id="xml-data-folio"></span></div>
+                        <div><strong>Fecha Emisión:</strong> <span id="xml-data-fecha"></span></div>
+                        <div><strong>Moneda:</strong> <span id="xml-data-moneda"></span></div>
+                        <div><strong>Tipo de Cambio:</strong> <span id="xml-data-tc"></span></div>
+                        <div><strong>SubTotal/Total:</strong> <span id="xml-data-total" style="font-weight:700"></span></div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;font-size:12.5px;border-top:1px solid var(--border);padding-top:15px">
+                        <div style="background:rgba(0,0,0,0.1);padding:10px;border-radius:6px">
+                            <strong style="color:var(--primary)">Emisor (Proveedor):</strong>
+                            <p style="margin:5px 0 2px" id="xml-data-emisor-nombre"></p>
+                            <p style="margin:0;font-family:monospace" id="xml-data-emisor-rfc"></p>
+                        </div>
+                        <div style="background:rgba(0,0,0,0.1);padding:10px;border-radius:6px">
+                            <strong style="color:var(--primary)">Receptor (Importador):</strong>
+                            <p style="margin:5px 0 2px" id="xml-data-receptor-nombre"></p>
+                            <p style="margin:0;font-family:monospace" id="xml-data-receptor-rfc"></p>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size:13px;margin:20px 0 10px">Detalle de Conceptos / Mercancías</h3>
+                    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-bottom:20px">
+                        <table style="width:100%;border-collapse:collapse;font-size:11.5px;text-align:left">
+                            <thead>
+                                <tr style="background:rgba(255,255,255,0.02);border-bottom:1px solid var(--border);color:var(--text-light)">
+                                    <th style="padding:8px 12px">Cant</th>
+                                    <th style="padding:8px 12px">Unidad</th>
+                                    <th style="padding:8px 12px">Clave SAT</th>
+                                    <th style="padding:8px 12px">Descripción</th>
+                                    <th style="padding:8px 12px;text-align:right">P. Unitario</th>
+                                    <th style="padding:8px 12px;text-align:right">Importe</th>
+                                </tr>
+                            </thead>
+                            <tbody id="xml-concepts-tbody">
+                                <!-- Se rellena por JS -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Generador COVE -->
+                    <div style="border-top:1px solid var(--border);padding-top:20px;background:rgba(59, 130, 246, 0.02);padding:15px;border-radius:8px">
+                        <h4 style="margin:0 0 12px;font-size:13px;color:var(--primary);display:flex;align-items:center;gap:5px">
+                            <span>⚡</span> Generador Rápido de XML de COVE para VUCEM
+                        </h4>
+                        <div class="form-grid" style="grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:12px;margin-bottom:15px">
+                            <div class="form-group" style="margin-bottom:0">
+                                <label style="font-size:11px">Correo de Contacto</label>
+                                <input type="email" id="cove-email" value="contacto@empresa.com" style="padding:6px;font-size:12px">
+                            </div>
+                            <div class="form-group" style="margin-bottom:0">
+                                <label style="font-size:11px">Tipo de Figura</label>
+                                <select id="cove-figura" style="padding:6px;font-size:12px">
+                                    <option value="1">1 - Importador / Exportador</option>
+                                    <option value="2">2 - Agente Aduanal / Apoderado</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="margin-bottom:0">
+                                <label style="font-size:11px">Tipo de Operación</label>
+                                <select id="cove-tipo-op" style="padding:6px;font-size:12px">
+                                    <option value="SUB">SUB - Transmisión por el interesado</option>
+                                    <option value="CON">CON - Consulta o rectificación</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button id="cove-download-btn" class="btn-primary" style="padding:6px 12px;font-size:12px">Descargar XML para COVE</button>
+                    </div>
+                </div>
+
+                <!-- Resultados PDF (Acuses VUCEM) -->
+                <div id="acuse-results-panel" style="display:none;border:1px solid var(--border);border-radius:12px;padding:20px;background:rgba(255,255,255,0.01)">
+                    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:20px">
+                        <h2 style="margin:0;font-size:16px;color:var(--primary)">Información Extraída del Acuse PDF</h2>
+                        <button id="pdf-to-vucem-btn" class="btn-secondary" style="padding:6px 12px;font-size:12px;background:#10b981;color:white">Validar en VUCEM</button>
+                    </div>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:15px;font-size:13px">
+                        <div><strong>Archivo:</strong> <span id="pdf-data-filename"></span></div>
+                        <div><strong>Tipo de Documento:</strong> <span id="pdf-data-tipo" style="font-weight:700;color:var(--secondary)"></span></div>
+                        <div><strong>Folio/e-Document:</strong> <span id="pdf-data-folio" style="font-family:monospace;font-weight:800;color:white"></span></div>
+                        <div><strong>RFC Importador:</strong> <span id="pdf-data-rfc" style="font-family:monospace"></span></div>
+                        <div><strong>Patente Aduanal:</strong> <span id="pdf-data-patente"></span></div>
+                        <div><strong>Fecha de Extracción:</strong> <span id="pdf-data-fecha"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: MANIFESTACIÓN MVE                     -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-mve">
+            <div class="card">
+                <h1>Manifestación de Valor Electrónica (MVE - Formato E2)</h1>
+                <p class="subtitle">Genere, valide y firme localmente la manifestación conforme al Anexo 22 de las RGCE</p>
+
+                <div class="mve-autofill-banner" style="background:rgba(59, 130, 246, 0.05);border:1px solid rgba(59, 130, 246, 0.15);padding:12px 16px;border-radius:8px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+                    <span style="font-size:13px;color:var(--text-light)">¿Desea autocompletar el formulario con los datos de una factura? Vaya a la pestaña <strong>VUCEM & XML</strong> para arrastrar el XML y luego presione el botón de transferir datos.</span>
+                </div>
+
+                <!-- Wizard Steps Indicator -->
+                <div class="mve-wizard-steps-container" style="margin-bottom:25px">
+                    <div class="mve-wizard-steps">
+                        <div class="mve-step-dot active" data-step="0">1</div>
+                        <div class="mve-step-dot" data-step="1">2</div>
+                        <div class="mve-step-dot" data-step="2">3</div>
+                        <div class="mve-step-dot" data-step="3">4</div>
+                        <div class="mve-step-dot" data-step="4">5</div>
+                    </div>
+                    <div class="mve-wizard-labels">
+                        <span class="active">1. Actores y Régimen</span>
+                        <span>2. Proveedor Extranjero</span>
+                        <span>3. Valores y Divisas</span>
+                        <span>4. Incrementables y Totales</span>
+                        <span>5. Soporte y Firma</span>
+                    </div>
+                </div>
+
+                <!-- Wizard Panels -->
+                <div class="mve-wizard-panels">
+                    
+                    <!-- Panel 1: Actores y Régimen -->
+                    <div class="mve-step-panel active" id="mve-step-panel-0">
+                        <h3 class="config-label">1. Datos Generales de la Operación</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="mve-rfc-importador">RFC del Importador *</label>
+                                <input type="text" id="mve-rfc-importador" value="SOL890412AA1" placeholder="RFC del importador">
+                            </div>
+                            <div class="form-group">
+                                <label for="mve-nombre-importador">Nombre o Razón Social del Importador *</label>
+                                <input type="text" id="mve-nombre-importador" value="ALINEA S.A.S. DE C.V." placeholder="Razón social completa">
+                            </div>
+                            <div class="form-group">
+                                <label for="mve-rfc-agente">RFC del Agente Aduanal *</label>
+                                <input type="text" id="mve-rfc-agente" value="AGE920101BB2" placeholder="RFC del Agente Aduanal">
+                            </div>
+                            <div class="form-group">
+                                <label for="mve-patente">Patente Aduanal *</label>
+                                <input type="text" id="mve-patente" value="3589" placeholder="Patente de 4 dígitos">
+                            </div>
+                            <div class="form-group">
+                                <label for="mve-regimen">Régimen Aduanero *</label>
+                                <select id="mve-regimen">
+                                    <option value="A1">A1 - Importación Definitiva</option>
+                                    <option value="IN">IN - Importación Temporal (IMMEX)</option>
+                                    <option value="AF">AF - Activo Fijo IMMEX</option>
+                                    <option value="F3">F3 - Depósito Fiscal</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="mve-tipo-op">Tipo de Operación</label>
+                                <select id="mve-tipo-op" disabled>
+                                    <option value="1">Importación (1)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel 2: Proveedor Extranjero -->
+                    <div class="mve-step-panel" id="mve-step-panel-1">
+                        <h3 class="config-label">2. Proveedor o Vendedor en el Extranjero</h3>
+                        <div class="form-grid">
+                            <div class="form-group" style="grid-column: span 2">
+                                <label for="mve-prov-nombre">Nombre o Razón Social del Proveedor *</label>
+                                <input type="text" id="mve-prov-nombre" value="GLOBAL TRADE DISTRIBUTORS LLC" placeholder="Nombre completo o razón social">
+                            </div>
+                            <div class="form-group">
+                                <label for="mve-prov-taxid">Identificación Fiscal (Tax ID) *</label>
+                                <input type="text" id="mve-prov-taxid" value="US-987654321" placeholder="Tax ID en país de origen">
+                            </div>
+                            <div class="form-group">
+                                <label for="mve-prov-pais">País de Origen/Facturación *</label>
+                                <input type="text" id="mve-prov-pais" value="EUA" placeholder="Ej. EUA, DEU, CHN">
+                            </div>
+                            <div class="form-group" style="grid-column: span 2">
+                                <label for="mve-prov-domicilio">Domicilio Completo *</label>
+                                <textarea id="mve-prov-domicilio" rows="3" placeholder="Calle, número, ciudad, estado, código postal y país">100 Broadway Suite 400, New York, NY 10005</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel 3: Valores y Divisas -->
+                    <div class="mve-step-panel" id="mve-step-panel-2">
+                        <h3 class="config-label">3. Datos de Facturación, Valores y Métodos</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="mve-incoterm">Incoterm Pactado *</label>
+                                <select id="mve-incoterm">
+                                    <option value="FOB">FOB - Free on Board</option>
+                                    <option value="EXW">EXW - Ex Works</option>
+                                    <option value="CIF">CIF - Cost, Insurance and Freight</option>
+                                    <option value="DDP">DDP - Delivered Duty Paid</option>
+                                    <option value="DAP">DAP - Delivered at Place</option>
+                                    <option value="CFR">CFR - Cost and Freight</option>
+                                    <option value="FCA">FCA - Free Carrier</option>
+                                    <option value="FAS">FAS - Free Alongside Ship</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="mve-metodo-val">Método de Valoración *</label>
+                                <select id="mve-metodo-val">
+                                    <option value="1">1 - Valor de transacción de las mercancías</option>
+                                    <option value="2">2 - Valor de transacción de mercancías idénticas</option>
+                                    <option value="3">3 - Valor de transacción de mercancías similares</option>
+                                    <option value="4">4 - Valor unitario de venta</option>
+                                    <option value="5">5 - Valor reconstruido</option>
+                                    <option value="6">6 - Último recurso</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="mve-moneda">Divisa de Factura *</label>
+                                <select id="mve-moneda">
+                                    <option value="USD">Dólar Americano (USD)</option>
+                                    <option value="EUR">Euro (EUR)</option>
+                                    <option value="MXN">Peso Mexicano (MXN)</option>
+                                    <option value="CAD">Dólar Canadiense (CAD)</option>
+                                    <option value="JPY">Yen Japonés (JPY)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="mve-tc">Tipo de Cambio Aduanero *</label>
+                                <input type="number" id="mve-tc" step="0.0001" value="17.55" placeholder="Tipo de cambio DOF">
+                            </div>
+                            <div class="form-group">
+                                <label for="mve-val-comercial">Valor Comercial Total (Divisa Original) *</label>
+                                <input type="number" id="mve-val-comercial" step="0.01" value="25000.00" placeholder="Monto total según factura">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel 4: Incrementables y Totales -->
+                    <div class="mve-step-panel" id="mve-step-panel-3">
+                        <h3 class="config-label">4. Conceptos Incrementables y Cálculo de Impuestos</h3>
+                        <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:20px;flex-wrap:wrap">
+                            <div class="form-grid" style="align-self:start">
+                                <div class="form-group">
+                                    <label for="mve-fletes">Fletes Internacionales (USD)</label>
+                                    <input type="number" id="mve-fletes" step="0.01" value="1200.00">
+                                </div>
+                                <div class="form-group">
+                                    <label for="mve-seguros">Seguros Internacionales (USD)</label>
+                                    <input type="number" id="mve-seguros" step="0.01" value="350.00">
+                                </div>
+                                <div class="form-group">
+                                    <label for="mve-envases">Envases y Embalajes (USD)</label>
+                                    <input type="number" id="mve-envases" step="0.01" value="0.00">
+                                </div>
+                                <div class="form-group">
+                                    <label for="mve-otros">Otros Incrementables (USD)</label>
+                                    <input type="number" id="mve-otros" step="0.01" value="150.00">
+                                </div>
+                            </div>
+
+                            <!-- Resumen Financiero en Lado Derecho -->
+                            <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:12px;padding:20px;color:var(--text-main)">
+                                <h4 style="margin:0 0 15px;color:var(--primary);font-size:14px;text-transform:uppercase;letter-spacing:0.05em">Totales y Gravámenes Estimados</h4>
+                                <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px">
+                                    <div style="display:flex;justify-content:space-between"><span>Suma Incrementables:</span><strong id="mve-calc-inc-usd">$0.00 USD</strong></div>
+                                    <div style="display:flex;justify-content:space-between"><span>Valor Aduana USD:</span><strong id="mve-calc-adu-usd">$0.00 USD</strong></div>
+                                    <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:10px"><span>Valor Aduana MXN:</span><strong id="mve-calc-adu-mxn">$0.00 MXN</strong></div>
+                                    
+                                    <div style="display:flex;justify-content:space-between"><span>IGI Estimado (10%):</span><span id="mve-calc-igi">$0.00</span></div>
+                                    <div style="display:flex;justify-content:space-between"><span>DTA (8 al millar):</span><span id="mve-calc-dta">$0.00</span></div>
+                                    <div style="display:flex;justify-content:space-between"><span>Prevalidación (Fijo):</span><span id="mve-calc-prev">$310.00</span></div>
+                                    <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:10px"><span>IVA Estimado (16%):</span><span id="mve-calc-iva">$0.00</span></div>
+                                    
+                                    <div style="display:flex;justify-content:space-between;font-size:15px;color:var(--primary)"><strong>Total Contribuciones:</strong><strong id="mve-calc-total">$0.00</strong></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Caja de Alertas de Incoterms -->
+                        <div id="mve-incoterm-warning" class="rgi-suggestion" style="margin-top:20px;border-left:4px solid var(--secondary);background:rgba(245,158,11,0.05);display:none">
+                            <strong>Alerta Normativa:</strong> <span id="mve-warning-text"></span>
+                        </div>
+                    </div>
+
+                    <!-- Panel 5: Soporte y Firma -->
+                    <div class="mve-step-panel" id="mve-step-panel-4">
+                        <h3 class="config-label">5. Documentos Soporte y Firma e.firma</h3>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;flex-wrap:wrap">
+                            <div>
+                                <h4 style="margin:0 0 10px;font-size:13px">Expediente de Soporte (Anexo 22 / Art. 81 L.A.)</h4>
+                                <div style="display:flex;flex-direction:column;gap:8px">
+                                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer">
+                                        <input type="checkbox" id="mve-doc-factura" checked> Factura Comercial o COVE
+                                    </label>
+                                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer">
+                                        <input type="checkbox" id="mve-doc-transporte" checked> Documento de Transporte (B/L, Guía Aérea, Carta Porte)
+                                    </label>
+                                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer">
+                                        <input type="checkbox" id="mve-doc-pago"> Comprobante de Pago Bancario
+                                    </label>
+                                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer">
+                                        <input type="checkbox" id="mve-doc-gastos" checked> Comprobante de Gastos de Fletes/Seguros
+                                    </label>
+                                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer">
+                                        <input type="checkbox" id="mve-doc-origen"> Certificado de Origen (Tratados Comerciales)
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px;padding:15px">
+                                <h4 style="margin:0 0 12px;font-size:13px;display:flex;align-items:center;gap:5px">
+                                    <span>🔑</span> Firma Local e.firma (SAT)
+                                </h4>
+                                <div style="display:flex;flex-direction:column;gap:10px">
+                                    <div class="form-group" style="margin-bottom:0">
+                                        <label style="font-size:11px;color:var(--text-light)">Certificado (.cer)</label>
+                                        <input type="file" id="mve-file-cer" accept=".cer" style="font-size:11px">
+                                    </div>
+                                    <div class="form-group" style="margin-bottom:0">
+                                        <label style="font-size:11px;color:var(--text-light)">Clave Privada (.key)</label>
+                                        <input type="file" id="mve-file-key" accept=".key" style="font-size:11px">
+                                    </div>
+                                    <div class="form-group" style="margin-bottom:0">
+                                        <label style="font-size:11px;color:var(--text-light)">Contraseña</label>
+                                        <input type="password" id="mve-password" placeholder="Contraseña de e.firma" style="padding:6px;font-size:12px;border:1px solid var(--border);border-radius:6px;background:rgba(0,0,0,0.2);color:white">
+                                    </div>
+                                    <button id="mve-sign-btn" class="btn-primary" style="margin-top:5px;padding:8px;font-size:12px">Firmar Documento MVE</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Advertencia Legal Protesta -->
+                        <div style="margin-top:20px;padding:12px;background:rgba(239, 68, 68, 0.05);border:1px solid rgba(239, 68, 68, 0.15);border-radius:8px;font-size:11px;color:var(--secondary);line-height:1.4">
+                            <strong>Bajo protesta de decir verdad:</strong> Declaro que los datos asentados en este documento son verdaderos y correctos, y que cuento con la documentación soporte establecida en el artículo 81 de la Ley Aduanera y reglas de carácter general vigentes.
+                        </div>
+
+                        <!-- Estatus de firmado -->
+                        <div id="mve-signed-box" style="margin-top:20px;display:none;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:8px;padding:15px;color:#10b981">
+                            <h4 style="margin:0 0 5px;font-size:13px">✓ Documento Firmado Digitalmente</h4>
+                            <p style="margin:0;font-size:11.5px;color:var(--text-light)"><strong>Folio Acuse:</strong> <span id="mve-signed-folio" style="font-family:monospace;color:white"></span></p>
+                            <p style="margin:2px 0 0;font-size:11.5px;color:var(--text-light)"><strong>Sello Digital:</strong> <span id="mve-signed-sello" style="font-family:monospace;color:white;word-break:break-all"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wizard Actions -->
+                <div class="mve-wizard-actions" style="display:flex;justify-content:space-between;margin-top:30px;padding-top:15px;border-top:1px solid var(--border)">
+                    <button id="mve-prev-btn" class="btn-secondary" disabled>Anterior</button>
+                    <div style="display:flex;gap:10px">
+                        <button id="mve-print-btn" class="btn-secondary" style="display:none">Imprimir Hoja E2</button>
+                        <button id="mve-download-btn" class="btn-secondary" style="display:none">Descargar JSON</button>
+                        <button id="mve-next-btn" class="btn-primary">Siguiente</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor Hoja Oficial E2 Centrado para Impresión -->
+            <div id="mve-sheet-preview-container" class="mve-preview-sheet" style="display:none">
+                <!-- Se rellena por JavaScript -->
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: LIQUIDACIÓN DE IMPUESTOS PEDIMENTO   -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-taxes">
+            <div class="card">
+                <h1>Cálculo de Contribuciones y Liquidación Aduanera</h1>
+                <p class="subtitle">Desglose fiscal completo de contribuciones aduaneras (IGI, DTA, IVA, PRV, CNT) conforme al Anexo 22 del SAT.</p>
+
+                <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:25px; flex-wrap:wrap">
+                    
+                    <!-- Left: Form & Partidas -->
+                    <div style="background:rgba(255,255,255,0.01); border:1px solid var(--border); border-radius:12px; padding:20px; display:flex; flex-direction:column; gap:20px">
+                        <h3 style="margin-top:0; margin-bottom:5px; color:var(--primary)">Datos Generales del Pedimento</h3>
+                        
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr; gap:15px">
+                            <div class="form-group">
+                                <label for="tax-input-patente">Patente Aduanal (4 dígitos) *</label>
+                                <input type="text" id="tax-input-patente" value="3589" maxlength="4" placeholder="Ej. 3589">
+                            </div>
+                            <div class="form-group">
+                                <label for="tax-input-pedimento">Consecutivo Pedimento (7 dígitos) *</label>
+                                <input type="text" id="tax-input-pedimento" value="6000001" maxlength="7" placeholder="Ej. 6000001">
+                            </div>
+                            <div class="form-group">
+                                <label for="tax-input-aduana">Aduana / Sección SAT (3 dígitos) *</label>
+                                <input type="text" id="tax-input-aduana" value="470" maxlength="3" placeholder="Ej. 470">
+                            </div>
+                            <div class="form-group">
+                                <label for="tax-input-regimen">Régimen *</label>
+                                <select id="tax-input-regimen">
+                                    <option value="A1">A1 - Importación Definitiva</option>
+                                    <option value="IN">IN - Importación Temporal IMMEX</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tax-input-val-usd">Valor en Aduana Total (USD) *</label>
+                                <input type="number" id="tax-input-val-usd" value="10000.00" step="0.01">
+                            </div>
+                            <div class="form-group">
+                                <label for="tax-input-tc">Tipo de Cambio (TC) *</label>
+                                <input type="number" id="tax-input-tc" value="18.50" step="0.0001">
+                            </div>
+                            <div class="form-group" style="grid-column: span 2">
+                                <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-light); cursor:pointer">
+                                    <input type="checkbox" id="tax-input-fta"> Aplicar beneficio arancelario de Tratado de Libre Comercio (T-MEC / TLC)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div style="border-top:1px solid var(--border); padding-top:15px">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
+                                <h4 style="margin:0; font-size:14px; color:white">Partidas / Conceptos Declarados</h4>
+                                <button type="button" id="tax-add-item-btn" class="btn-secondary" style="padding:4px 10px; font-size:11.5px; background:rgba(59, 130, 246, 0.1); border-color:#3b82f6; color:#60a5fa">
+                                    + Agregar Partida
+                                </button>
+                            </div>
+                            
+                            <div style="overflow-x:auto; border:1px solid var(--border); border-radius:8px">
+                                <table style="width:100%; border-collapse:collapse; font-size:12px; text-align:left" id="tax-items-table">
+                                    <thead>
+                                        <tr style="background:rgba(255,255,255,0.02); border-bottom:1px solid var(--border); color:var(--text-light)">
+                                            <th style="padding:8px 10px">Descripción</th>
+                                            <th style="padding:8px 10px; width:110px">Fracción SAT</th>
+                                            <th style="padding:8px 10px; width:110px; text-align:right">Valor (USD)</th>
+                                            <th style="padding:8px 10px; width:40px; text-align:center">Acción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tax-items-tbody">
+                                        <!-- Partidas dinámicas -->
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+                                            <td style="padding:6px 10px"><input type="text" class="tax-item-desc" value="Laptop Lenovo ThinkPad" style="padding:4px; font-size:11.5px; width:100%"></td>
+                                            <td style="padding:6px 10px"><input type="text" class="tax-item-hs" value="8471.30.01" style="padding:4px; font-size:11.5px; width:100%; font-family:monospace"></td>
+                                            <td style="padding:6px 10px"><input type="number" class="tax-item-val" value="6000.00" style="padding:4px; font-size:11.5px; width:100%; text-align:right"></td>
+                                            <td style="padding:6px 10px; text-align:center"><button class="btn-delete" style="padding:2px 6px; font-size:10px" onclick="deleteTaxRow(this)">X</button></td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+                                            <td style="padding:6px 10px"><input type="text" class="tax-item-desc" value="Tequila 100% de Agave" style="padding:4px; font-size:11.5px; width:100%"></td>
+                                            <td style="padding:6px 10px"><input type="text" class="tax-item-hs" value="2208.90.03" style="padding:4px; font-size:11.5px; width:100%; font-family:monospace"></td>
+                                            <td style="padding:6px 10px"><input type="number" class="tax-item-val" value="4000.00" style="padding:4px; font-size:11.5px; width:100%; text-align:right"></td>
+                                            <td style="padding:6px 10px; text-align:center"><button class="btn-delete" style="padding:2px 6px; font-size:10px" onclick="deleteTaxRow(this)">X</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <button id="tax-calculate-btn" class="btn-primary" style="width:100%; font-weight:600; padding:10px 0; font-size:13.5px">
+                            ⚡ Calcular Contribuciones
+                        </button>
+                    </div>
+
+                    <!-- Right: SAT Pedimento Receipt Style Results -->
+                    <div style="background:rgba(0,0,0,0.2); border:1px solid var(--border); border-radius:12px; padding:20px; display:flex; flex-direction:column; gap:20px" id="tax-result-panel">
+                        <div style="text-align:center; padding:15px; border:1px dashed var(--border); border-radius:8px">
+                            <span style="font-size:24px">🧾</span>
+                            <h4 style="margin:8px 0 2px; color:var(--text-secondary)">Desglose Contribuciones Pedimento</h4>
+                            <p style="font-size:11.5px; color:var(--text-light); margin:0">Presione 'Calcular Contribuciones' para generar el cuadro de liquidación del SAT.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: BÚSQUEDA LÉXICA                       -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-search">
+            <div class="card">
+                <h1>Búsqueda de Códigos Arancelarios</h1>
+                <p class="subtitle">Busque por descripción de mercancía, código HS o palabra clave en el catálogo local.</p>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Ej: manzanas frescas, teléfonos móviles, cemento...">
+                    <button id="search-btn" class="btn-primary">Buscar</button>
+                </div>
+                <div id="search-results" class="results-container"></div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: ÁRBOL HS                              -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-tree">
+            <div class="card">
+                <h1>Navegación por Árbol Armonizado</h1>
+                <p class="subtitle">Explore la nomenclatura del Sistema Armonizado por secciones, capítulos y partidas.</p>
+                <div class="tree-controls">
+                    <input type="text" id="tree-filter" placeholder="Filtrar árbol...">
+                    <button id="tree-expand-all" class="btn-secondary">Expandir todo</button>
+                    <button id="tree-collapse-all" class="btn-secondary">Colapsar todo</button>
+                </div>
+                <div id="tree-container" class="tree-container"></div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: REGLAS RGI                            -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-rgi">
+            <div class="card">
+                <h1>Reglas Generales de Interpretación</h1>
+                <p class="subtitle">Aplique las RGI para clasificar su mercancía paso a paso.</p>
+                <div class="rgi-input">
+                    <input type="text" id="rgi-input" placeholder="Describa la mercancía a clasificar...">
+                    <button id="rgi-btn" class="btn-primary">Aplicar RGI</button>
+                </div>
+                <div id="rgi-results" class="results-container"></div>
+                <div id="rgi-rules-list" class="rgi-rules"></div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: FUENTES OFICIALES                     -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-sources">
+            <div class="card">
+                <h1>Fuentes Oficiales del Sistema Armonizado</h1>
+                <p class="subtitle">Conéctese a fuentes oficiales (LIGIE, SNICE) en tiempo real para sincronizar datos arancelarios.</p>
+
+                <div class="sources-controls">
+                    <button id="check-sources-btn" class="btn-primary">Verificar estado de fuentes</button>
+                    <button id="regenerate-hs-btn" class="btn-secondary">Regenerar base HS (21 secciones)</button>
+                    <button id="sync-official-btn" class="btn-secondary">Sincronizar desde fuentes oficiales</button>
+                </div>
+
+                <div id="sources-status" class="sources-status"></div>
+                <div id="sources-stats" class="sources-stats"></div>
+                <div id="sources-list" class="sources-list"></div>
+
+                <div class="sources-verify" style="margin-top:20px">
+                    <h3>Verificar Código HS en Fuentes Oficiales</h3>
+                    <div class="search-box" style="margin-top:8px">
+                        <input type="text" id="verify-hs-input" placeholder="Ej: 080810">
+                        <button id="verify-hs-btn" class="btn-primary">Verificar</button>
+                    </div>
+                    <div id="verify-results" class="results-container"></div>
+                </div>
+
+                <div class="sources-search" style="margin-top:20px">
+                    <h3>Buscar en Fuentes Oficiales en Vivo</h3>
+                    <div class="search-box" style="margin-top:8px">
+                        <input type="text" id="sources-search-input" placeholder="Ej: manzanas, teléfonos...">
+                        <button id="sources-search-btn" class="btn-primary">Buscar en fuentes oficiales</button>
+                    </div>
+                    <div id="sources-search-results" class="results-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: HISTORIAL                             -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-history">
+            <div class="card">
+                <h1>Historial de Clasificaciones Guardadas</h1>
+                <p class="subtitle">Historial de clasificaciones arancelarias registradas localmente.</p>
+                <div class="history-controls">
+                    <button id="export-btn" class="btn-secondary">Exportar Excel</button>
+                    <button id="refresh-history-btn" class="btn-secondary">Actualizar</button>
+                </div>
+                <div id="history-table-container">
+                    <table id="history-table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Código HS</th>
+                                <th>Confianza</th>
+                                <th>Método</th>
+                                <th>Fecha</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab: IMPORT / EXPORT                       -->
+        <!-- ========================================== -->
+        <div class="tab-content" id="tab-import">
+            <div class="card">
+                <h1>Importar / Exportar Datos</h1>
+                <div class="import-export-grid">
+                    <div class="ie-card">
+                        <h3>Exportar Clasificaciones</h3>
+                        <p>Descargue todas las clasificaciones en formato Excel</p>
+                        <button id="export-classifications-btn" class="btn-primary">Exportar a Excel</button>
+                    </div>
+                    <div class="ie-card">
+                        <h3>Exportar Catálogo HS</h3>
+                        <p>Descargue el catálogo completo del Sistema Armonizado</p>
+                        <button id="export-catalog-btn" class="btn-primary">Exportar Catálogo</button>
+                    </div>
+                    <div class="ie-card">
+                        <h3>Importar CSV</h3>
+                        <p>Cargue clasificaciones desde un archivo CSV</p>
+                        <input type="file" id="csv-file" accept=".csv">
+                        <button id="import-csv-btn" class="btn-secondary">Importar CSV</button>
+                    </div>
+                    <div class="ie-card">
+                        <h3>Importar Excel</h3>
+                        <p>Cargue clasificaciones desde un archivo Excel</p>
+                        <input type="file" id="excel-file" accept=".xlsx,.xls">
+                        <button id="import-excel-btn" class="btn-secondary">Importar Excel</button>
+                    </div>
+                </div>
+                <div id="import-status" class="import-status"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal de detalle -->
+    <div id="detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        // Sistema de autenticación dinámico para Login Central
+        function handleLogin(event) {
+            event.preventDefault();
+            const user = document.getElementById('login-user').value.trim();
+            const pass = document.getElementById('login-pass').value.trim();
+            const errorDiv = document.getElementById('login-error');
+            const errorText = document.getElementById('login-error-text');
+
+            // Autenticación por defecto admin/admin123 o cualquier bypass de desarrollo (RFC largo + clave > 6)
+            if ((user.toLowerCase() === 'admin' && pass === 'admin123') || (user.length >= 12 && pass.length >= 6)) {
+                errorDiv.style.display = 'none';
+                const loginScreen = document.getElementById('login-screen');
+                loginScreen.classList.add('fade-out');
+                
+                // Guardar estado de sesión
+                sessionStorage.setItem('alinea_logged_in', 'true');
+                sessionStorage.setItem('alinea_user', user);
+                
+                console.log("Sesión iniciada con éxito en Alinea Central");
+            } else {
+                errorDiv.style.display = 'flex';
+                errorText.textContent = "Usuario o contraseña inválidos corporativos.";
+            }
+        }
+
+        // Validación de sesión activa inmediata al cargar el DOM
+        (function() {
+            if (sessionStorage.getItem('alinea_logged_in') === 'true') {
+                document.write('<style>#login-screen { display: none !important; }</style>');
+            }
+        })();
+    </script>
+
+    <script src="static/js/mock_api.js"></script>
+    <script src="static/js/app.js"></script>
+</body>
+</html>
