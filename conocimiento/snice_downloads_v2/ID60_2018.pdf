@@ -1,0 +1,1518 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8"/>
+     
+        
+        
+    
+    <title>Home</title>
+    <script defer="defer" type="text/javascript" src="https://rum.hlx.page/.rum/@adobe/helix-rum-js@%5E2/dist/micro.js" data-routing="env=prod,tier=publish,ams=World Bank"></script>
+<link rel="shortcut icon" href="/content/dam/wbr-redesign/logos/WBG-Globe-RGB-fav.png" type="image/png"/>
+    
+    <meta name="description" content="Business Ready"/>
+    <meta name="template" content="business-ready-home"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+
+    
+        
+    
+
+	<meta property="og:title" content="Home"/>
+
+	<meta property="og:url" content="https://www.worldbank.org/en/businessready"/>
+
+	<meta property="og:site_name" content="World Bank"/>
+
+	<meta property="og:description" content="Business Ready"/>
+
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:image:type" content="image/jpg"/>
+
+	<meta property="og:image:width" content="1200"/>
+
+	<meta property="og:image:height" content="630"/>
+
+
+	<meta name="twitter:card" content="summary_large_image"/>
+
+	<meta name="twitter:site" content="World Bank"/>
+
+	<meta name="twitter:image" content="https://www.worldbank.org/content/dam/sites/b-ready/img/2024/bready.png"/>
+
+
+	<meta name="dcterms.title" content="Home"/>
+
+	<meta name="dcterms.type" content="Text/HTML"/>
+
+	<meta name="dcterms.identifier" content="https://www.worldbank.org/en/businessready"/>
+
+	<meta name="dcterms.language" content="English"/>
+
+
+<link rel="canonical" href="https://www.worldbank.org/en/businessready"/>
+
+      
+
+
+    
+<script>
+    var wbgData = wbgData || {};
+
+    wbgData.page = {
+        pageInfo: {
+            pageName: "en:businessready:en",
+            pageCategory: "home",
+            pageUid: "78d9a59d-e557-4512-9c07-00516b22558f",
+            pageFirstPub: "",
+            pageLastMod: "05-06-2026",
+            author: "",
+            topicTag: "",
+            subtopicTag: "",
+            contentType: "Home Page",
+            channel: "DEC Business Ready EXT",
+            webpackage: ""
+        },
+        sectionInfo: {
+            siteSection: "Home",
+            subsectionP2: "",
+            subsectionP3: "",
+            subsectionP4: "",
+            subsectionP5: "",
+        }
+    }
+    wbgData.site = {
+        siteInfo: {
+            siteLanguage: "en",
+            siteCountry: "",
+            siteEnv: "prod",
+            siteType: "Business Ready",
+            siteRegion: "",
+            userIpaddressType: "10.48.0.100",
+        },
+        techInfo: {
+            cmsType: "AEM",
+            bussVPUnit: "DEC",
+            bussUnit: "DECIG",
+            bussUserGroup: "external",
+            bussAgency: "ibrd",
+        },
+    }
+</script>
+<script src="https://assets.adobedtm.com/223f6e2cf7c9/3eb6c9b72a93/launch-7bc0cdc67098.min.js" async></script>
+    
+
+    
+    <link rel="stylesheet" href="/etc.clientlibs/worldbank-bready/clientlibs/clientlib-base.css" type="text/css">
+
+
+
+
+
+    
+    
+    
+
+    
+
+    
+    <script src="/etc.clientlibs/worldbank-bready/clientlibs/clientlib-dependencies.js"></script>
+
+
+    
+    <link rel="stylesheet" href="/etc.clientlibs/worldbank-bready/clientlibs/clientlib-dependencies.css" type="text/css">
+<link rel="stylesheet" href="/etc.clientlibs/worldbank-bready/clientlibs/clientlib-site.css" type="text/css">
+<link rel="stylesheet" href="/etc.clientlibs/worldbank-bready/clientlibs/bready-clientlib-site.css" type="text/css">
+
+
+    
+    
+
+    
+    
+    
+    
+    
+<link rel="stylesheet" href="/etc.clientlibs/worldbank-bready/clientlibs/clientlib-site-publish.css" type="text/css">
+
+
+
+</head>
+    <body class="page basicpage" id="page-e239924418" data-cmp-link-accessibility-enabled data-cmp-link-accessibility-text="opens in a new tab">
+        
+        
+        
+            
+
+
+
+
+            
+<div id="wbg-aem-target" class="wbg-aem-target"></div>
+
+
+    
+
+ 
+<div class="root container responsivegrid">
+  
+
+
+    
+    <div id="container-310fe5bcea" class="cmp-container">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+<div id="experiencefragment-7c95cd3441" class="cmp-experiencefragment cmp-experiencefragment--business-ready-header">
+
+  
+
+
+    
+    <div id="container-2f3dc78d2e" class="cmp-container">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
+  
+
+
+    
+    
+    
+    <div id="container-29fe08d2ce" class="cmp-container">
+        
+        <div class="headerlogo"><div class="cmp-headerlogo">
+	<div class="touchui-container">
+	    <div class="lp__navbar_header">
+	        <div class="lp__site_logo">
+	            <a href="https://www.worldbank.org/" class="lp__navbar_brand hidden-md hidden-sm hidden-xs hidden-xxs"><img title="world bank group" alt="world bank group" src="/content/dam/sites/b-ready/img/B-READY%20and%20DECIGDECIG-Logo-Color_1.png" class="img-responsive"/>
+	            </a>
+	            <a href="https://www.worldbank.org/" class="lp__navbar_brand hidden-lg hidden-xl "><img title="World Bank logo" alt="World Bank logo" src="/content/dam/sites/b-ready/img/B-READY%20and%20DECIGDECIG-Logo-Color_1.png" class="img-responsive"/> </a>
+	        </div>
+	        <div class="lp__wbg_logo">
+	            <span class="divider"></span>
+                <a href="/en/businessready" class="lp__navbar_brand"><img title="B ready logo" alt="B ready logo" src="/content/dam/sites/b-ready/img/B-READY%20and%20DECIGB-READY_Standalone_Logo_Color_3.png" class="img-responsive"/> </a>
+	        </div>
+	        <div class="lp__wbg_txt">
+	            <span></span>
+	        </div>
+	    </div>
+	
+	    <div class="lp__search_wrapper lp__secondary_search hidden-sm hidden-xs hidden-xxs">
+	
+	        <form class="lp__input_group search_code_at_the_end" name="searchbox" action="/en/businessready/search" method="GET">
+	
+	            <input type="search" placeholder="Search" class="search-input-field" name="q" id="search-project--224388726" aria-label="Search"/>
+	            <button type="submit" title="Search" class="lp__submit_icon">
+	                <span class="sr-only" aria-hidden="true">Search</span>
+	            </button>
+	
+	        </form>
+
+	    </div>
+
+	    <div class="lp__menuButton">
+	        <button type="button" class="lp__navbar_toggle collapsed" data-toggle="collapse" data-target="#menuItems" aria-expanded="false" aria-controls="menuItems" aria-label="menu">
+	        </button>
+	    </div>
+	</div>
+</div>
+
+    
+</div>
+
+        
+    </div>
+
+
+</div>
+<div class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
+  
+
+
+    
+    
+    
+    <div id="container-d40d9d471d" class="cmp-container">
+        
+        <div class="headernavigation">
+    
+<link rel="stylesheet" href="/etc.clientlibs/worldbank-bready/components/headernavigation/clientlib/site.css" type="text/css">
+<script src="/etc.clientlibs/worldbank-bready/components/headernavigation/clientlib/site.js"></script>
+
+
+
+
+<div class="lp__menulist_wrappper lp__megamenu">
+    <div class="touchui-container">
+        <div class="lp__navbar_collapse collapse" id="menuItems">
+            <div class="header-search-section hidden-lg hidden-md">
+                <label for="mobile-globalsearch" class="sr-only">Global Search</label>
+                <form role="search" class="lp__input_group " name="searchbox" action="/en/businessready/search" method="GET">
+                    <input type="text" id="mobile-globalsearch" placeholder="Search" class="search-input-field-1 global_search_form_mobile" name="query" title=""/>
+                    <button type="submit" title="Search" class="search-submit-icon"><span class="sr-only" aria-hidden="true">Search button</span>
+                    </button>
+                </form>
+            </div>
+            <nav class="megamenu" role="navigation">
+                <ul class="lp__navbar_nav lp__megamenu" id="lp__megamenu" role="menubar">
+                    <li class="lp__megamenu_list" role="none">
+                        <a href="/en/businessready" class="lp__megamenu_item active" tabindex="0" role="menuitem" id="lp__megamenu0" aria-controls="lp__megamenu0">Home</a>
+                        
+                    </li>
+                
+                    <li class="lp__megamenu_list" role="none">
+                        <a href="/en/businessready/about-us" class="lp__megamenu_item " tabindex="0" role="menuitem" aria-expanded aria-haspopup id="lp__megamenu1" aria-controls="lp__megamenu1">About</a>
+                        <div class="lp__megamenu_dropdown" id="lp__submenumenu1" role="group" aria-expanded="false" aria-hidden="true" aria-labelledby="lp__megamenu1">
+							<div class="lp__megamenu_list_section">
+								<ul role="menu">
+									<li role="none"><a role="menuitem" href="/en/businessready/about-us/faq" class="">FAQ | Business Ready</a></li>
+								
+									<li role="none"><a role="menuitem" href="/en/businessready/about-us/our-mission" class="">Our Mission | Business Ready</a></li>
+								
+									<li role="none"><a role="menuitem" href="/en/businessready/about-us/project-milestones" class="">Project Milestones | Business Ready</a></li>
+								
+									<li role="none"><a role="menuitem" href="/en/businessready/about-us/meet-the-team" class="">Meet the B-READY Team | Business Ready</a></li>
+								</ul>
+							</div>
+						</div>
+                    </li>
+                
+                    <li class="lp__megamenu_list" role="none">
+                        <a href="/en/businessready/publications" class="lp__megamenu_item " tabindex="0" role="menuitem" id="lp__megamenu2" aria-controls="lp__megamenu2">Publications</a>
+                        
+                    </li>
+                
+                    <li class="lp__megamenu_list" role="none">
+                        <a href="/en/businessready/data" class="lp__megamenu_item " tabindex="0" role="menuitem" id="lp__megamenu3" aria-controls="lp__megamenu3">Data</a>
+                        
+                    </li>
+                
+                    <li class="lp__megamenu_list" role="none">
+                        <a href="/en/businessready/methodology" class="lp__megamenu_item " tabindex="0" role="menuitem" id="lp__megamenu4" aria-controls="lp__megamenu4">Methodology</a>
+                        
+                    </li>
+                
+                    <li class="lp__megamenu_list" role="none">
+                        <a href="/en/businessready/news-events" class="lp__megamenu_item " tabindex="0" role="menuitem" id="lp__megamenu5" aria-controls="lp__megamenu5">NEWS AND EVENTS</a>
+                        
+                    </li>
+                
+                    <li class="lp__megamenu_list" role="none">
+                        <a href="/en/businessready/engagements" class="lp__megamenu_item " tabindex="0" role="menuitem" aria-expanded aria-haspopup id="lp__megamenu6" aria-controls="lp__megamenu6">Engagements</a>
+                        <div class="lp__megamenu_dropdown" id="lp__submenumenu6" role="group" aria-expanded="false" aria-hidden="true" aria-labelledby="lp__megamenu6">
+							<div class="lp__megamenu_list_section">
+								<ul role="menu">
+									<li role="none"><a role="menuitem" href="/en/businessready/engagements/global-contributors" class="">Global Contributors | Business Ready</a></li>
+								
+									<li role="none"><a role="menuitem" href="/en/businessready/engagements/governments" class="">Governments | Business Ready</a></li>
+								</ul>
+							</div>
+						</div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+    
+</div>
+
+        
+    </div>
+
+
+</div>
+
+    
+</div>
+
+    </div>
+
+    
+
+</div>
+
+    
+</div>
+<div class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
+  
+
+
+    
+    <div id="container-c18b24c96b" class="cmp-container">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="container responsivegrid tui_full_row_blue aem-GridColumn aem-GridColumn--default--12">
+  
+
+
+    
+    
+    
+    <div id="container-66d6609c26" class="cmp-container">
+        
+        <div class="container responsivegrid">
+  
+
+
+    
+    
+    
+    <div id="container-e312a21344" class="cmp-container">
+        
+        <div class="teaser">
+
+
+
+
+
+
+	<div class="tui__subnational_home_banner">
+    <div class="cmp-teaser">
+        <img src="/content/dam/sites/b-ready/img/2024/banner-bready.svg" loading="lazy" class="cmp-teaser__bg-img" itemprop="contentUrl" title="B-READY 2025 is now released!"/>
+
+      <div class="cmp-teaser-container">
+         <div class="cmp-teaser__content">
+            
+    
+
+            <h1 class="cmp-teaser__title">
+               B-READY 2025 is now released!
+            </h1>
+            
+    
+
+            
+    
+
+         </div>
+         <div class="cmp-teaser__image">
+            <div class="cmp-image">
+				<img src="/content/dam/sites/b-ready/img/DECIG_Logos_B-Ready_2025_B-READY_Short_Logo_White.png" class="cmp-image__image" itemprop="contentUrl" alt="" title="" aria-hidden="true"/>
+            </div>
+         </div>
+         
+      </div>
+   </div>
+</div>
+
+
+    
+
+
+
+
+
+
+</div>
+
+        
+    </div>
+
+
+</div>
+
+        
+    </div>
+
+
+</div>
+<div class="container responsivegrid full-row-white-components-48 tui_bready_home_body_content aem-GridColumn aem-GridColumn--default--12">
+  
+
+
+    
+    
+    
+    <div id="container-2375d6aebd" class="cmp-container">
+        
+        <div class="container responsivegrid touchui-container tui_static_button_group">
+  
+
+
+    
+    
+    
+    <div id="container-a45374dbab" class="cmp-container">
+        
+        <div class="columncontrol">
+
+
+    
+
+
+
+
+
+    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+        
+            <div class="container responsivegrid aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--offset--tablet--0 aem-GridColumn--tablet--none aem-GridColumn--default--7 aem-GridColumn--offset--default--0 aem-GridColumn--default--none aem-GridColumn--desktop--7 aem-GridColumn--offset--desktop--0 aem-GridColumn--desktop--none aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none">
+                
+  
+
+
+    
+    
+    
+    <div id="container-a25d42d6e8" class="cmp-container">
+        
+        <div class="title">
+<div id="title-07f5ce3867" class="cmp-title">
+    <h2 class="cmp-title__text">Latest Report</h2>
+</div>
+
+    
+
+</div>
+<div class="teaser tui_pdf_link_list">
+
+
+
+
+
+	<div class="cmp-teaser">
+	<img src="/content/dam/sites/b-ready/img/33860_Front%20Cover.png" loading="lazy" class="cmp-teaser__bg-img" itemprop="contentUrl" title="Business Ready (B-READY) 2025 "/>
+   <div class="cmp-teaser-container">
+      <div class="cmp-teaser__content">
+         
+    
+
+         
+    <h2 class="cmp-teaser__title">
+        Business Ready (B-READY) 2025 
+    </h2>
+
+         
+    <div class="cmp-teaser__description"><p>The Business Ready (B-READY) 2025 report assesses the regulatory framework and public services directed at firms, and the efficiency with which regulatory framework and public services are combined in practice.</p>
+<p><a href="https://openknowledge.worldbank.org/server/api/core/bitstreams/77ab6e06-9934-435c-a84e-03a4c99bbe48/content" target="_blank">Full Report</a>: <a href="https://openknowledge.worldbank.org/server/api/core/bitstreams/b97c8f8f-d8e6-4ed8-8f48-3bf4de7427bb/content" target="_blank">Arabic</a> | <a href="https://openknowledge.worldbank.org/server/api/core/bitstreams/8c10770a-fb58-4388-afbe-1586067b97cd/content" target="_blank">French</a> | <a href="https://openknowledge.worldbank.org/server/api/core/bitstreams/504628cb-2425-4a66-8682-120b72c22aa1/content" target="_blank">Russian</a> | <a href="https://openknowledge.worldbank.org/server/api/core/bitstreams/346b9f41-5329-48b8-be52-817c1735a5e3/content" target="_blank">Spanish</a></p>
+</div>
+
+         
+    <div class="cmp-teaser__action-container">
+        
+    <a class="cmp-teaser__action-link" id="teaser-541e76caae-cta-f6f51d0279" href="/content/dam/sites/b-ready/documents/excel/B-READY_ALL_DATA_2025.zip">Download Data</a>
+
+    
+        
+    <a class="cmp-teaser__action-link" id="teaser-541e76caae-cta-db850b2b27" href="https://reproducibility.worldbank.org/index.php/catalog/study/FR_WLD_2025_523" target="_blank">Reproducibility Package</a>
+
+    </div>
+
+      </div>
+      
+      <div class="cmp-teaser__action-container">
+         <ul class="tui_button_group tui__btn tui__solid_lightblue_btn tui_download_btn">
+            <li>
+               <a href="https://openknowledge.worldbank.org/server/api/core/bitstreams/77ab6e06-9934-435c-a84e-03a4c99bbe48/content" class="cmp-teaser__action-link" data-customlink="sm:body" data-text="Download Report">
+               
+               <span class="cmp-button__text">Download Report</span>
+               </a>
+            </li>
+         </ul>
+      </div>
+   </div>
+</div>
+
+    
+
+
+
+
+
+
+
+</div>
+
+        
+    </div>
+
+
+
+            </div>
+                
+         
+            <div class="container responsivegrid aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--offset--tablet--0 aem-GridColumn--tablet--none aem-GridColumn--default--4 aem-GridColumn--offset--default--1 aem-GridColumn--default--none aem-GridColumn--desktop--4 aem-GridColumn--offset--desktop--1 aem-GridColumn--desktop--none aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none">
+                
+  
+
+
+    
+    
+    
+    <div id="container-f0d8af09f7" class="cmp-container">
+        
+        <div class="button list tui__button_group tui__btn tui__solid_lightblue_btn">
+
+    
+
+<a id="button-7cbfee841d" class="cmp-button" href="/en/businessready/about-us/our-mission">
+    
+    
+
+    <span class="cmp-button__text">Our Mission</span>
+</a>
+</div>
+<div class="button list tui__button_group tui__btn tui__solid_lightblue_btn">
+
+    
+
+<a id="button-5df60cb8bd" class="cmp-button" href="/en/businessready/about-us/project-milestones">
+    
+    
+
+    <span class="cmp-button__text">Project Milestones</span>
+</a>
+</div>
+<div class="button list tui__button_group tui__btn tui__solid_lightblue_btn">
+
+    
+
+<a id="button-7f250a5660" class="cmp-button" href="/en/businessready/about-us/meet-the-team">
+    
+    
+
+    <span class="cmp-button__text">Meet the B-READY Team</span>
+</a>
+</div>
+<div class="button list tui__button_group tui__btn tui__solid_lightblue_btn">
+
+    
+
+<a id="button-5c172545fb" class="cmp-button" href="/en/businessready/about-us/faq">
+    
+    
+
+    <span class="cmp-button__text">FAQ</span>
+</a>
+</div>
+
+        
+    </div>
+
+
+
+            </div>
+                
+         
+     </div>
+                
+
+
+            
+</div>
+
+        
+    </div>
+
+
+</div>
+
+        
+    </div>
+
+
+</div>
+<div class="container responsivegrid touchui-container tui_bready_mapselection_container aem-GridColumn aem-GridColumn--default--12">
+  
+
+
+    
+    
+    
+    <div id="container-fbccc8de08" class="cmp-container">
+        
+        <div class="title">
+<div id="title-0792592cb3" class="cmp-title">
+    <h2 class="cmp-title__text">Explore Data</h2>
+</div>
+
+    
+
+</div>
+<div class="datatopicsreactappapi parbase">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+    <link rel="stylesheet" href="/etc.clientlibs/datasites-spa/clientlibs/clientlib-bready-data.css" type="text/css">
+
+    
+
+
+
+<script>
+
+   var componentId = 'dataHomepage';
+    var datatopicsJson = {};
+    datatopicsJson = {"pageTitle":"Home","apiKeyIncluded":"false","topicProfileURLAuthor":"/content/worldbankgroup/businessready/en/topic","methodologyHash":[{"hashVal":"tabs-b10aa00388-item-8746b6d51b-tab","hashLabel":"BE"},{"hashVal":"tabs-b10aa00388-item-9757015dd7-tab","hashLabel":"BL"},{"hashVal":"tabs-b10aa00388-item-7c3e4e5ee0-tab","hashLabel":"US"},{"hashVal":"tabs-b10aa00388-item-ac8d3898bf-tab","hashLabel":"Labor"},{"hashVal":"tabs-b10aa00388-item-9602347490-tab","hashLabel":"FS"},{"hashVal":"tabs-b10aa00388-item-9d71f8fc80-tab","hashLabel":"IT"},{"hashVal":"tabs-b10aa00388-item-9fcb59f4d3-tab","hashLabel":"Taxation"},{"hashVal":"tabs-b10aa00388-item-d8ca980710-tab","hashLabel":"DR"},{"hashVal":"tabs-b10aa00388-item-5c68a231d2-tab","hashLabel":"MC"},{"hashVal":"tabs-b10aa00388-item-24941ffe74-tab","hashLabel":"BI"}],"hideMetaTitleDescription":"false","foregroundLoaderPath":"/content/dam/datatopics/loader.gif","mode":"publish","mapApiKeyValue":"e0da0eff21b61eb99218ba95a9ca29cddb9eaf4f9e88b7f19c0f8fdf609863ca","topicGridImagePath":"/content/dam/sites/b-ready/img/2025/Grid-Topic-Default-Image.jpg","pageDescription":"Business Ready","countryProfileURLPublish":"/en/businessready/economy","mapDefaultImagePath":"/content/dam/sites/b-ready/img/2025/Map-Topic-Default-Image.jpg","selector":"","endpointList":[{"apiEndpoint":"https://extdataportal.worldbank.org/api/BReady/api/DATA/TopicPillars","endpointLabel":"topicPillars"},{"apiEndpoint":"https://extdataportal.worldbank.org/api/BReady/api/DATA/OverallPillarScores","endpointLabel":"overallPillarScores"},{"apiEndpoint":"https://maps.worldbank.org/gspext-api/rest/admin/bounds/country","endpointLabel":"boundaries"},{"apiEndpoint":"https://extdataportal.worldbank.org/api/BReady/api/DATA/TopicScorewithParentScore","endpointLabel":"topicScorewithParentScore"},{"apiEndpoint":"https://extdataportal.worldbank.org/api/BReady/api/DATA/PillarScoresForTopics","endpointLabel":"pillarScoresForTopics"}],"methodologyURLAuthor":"/content/worldbankgroup/businessready/en/methodology_old1.html","countryListJsonPath":"/content/dam/sites/b-ready/api/country.json","methodologyURLPublish":"/en/businessready/methodology","dataYear":"2025","topicDescriptionJsonPath":"/content/dam/sites/b-ready/api/topic.json","logoPath":"/content/dam/sites/b-ready/img/2024/B-Ready.svg","pillarDescriptionJsonPath":"/content/dam/sites/b-ready/api/data-pillar-description.json","topicProfileURLPublish":"/en/businessready/topic","inlineLoaderPath":"/content/dam/datatopics/loading-icon.gif","countryCodes":[{"breadyAPICode":"ROM","mapAPICode":"ROU"},{"breadyAPICode":"TMP","mapAPICode":"TLS"},{"breadyAPICode":"WBG","mapAPICode":"GZE"},{"breadyAPICode":"ZAR","mapAPICode":"COD"}],"pillarGridImagePath":"/content/dam/sites/b-ready/img/2025/Grid-Pillar-Default-Image.jpg","countryProfileURLAuthor":"/content/worldbankgroup/businessready/en/economy","loaderPath":"https://www.worldbank.org/content/dam/wbr-redesign/logos/ajax.gif","name":"dataHomepage","mapApiKeyName":"APIkey"};
+    //console.log(datatopicsJson);
+     var finalObject = finalObject || {};
+    if(datatopicsJson){
+        finalObject['datatopics.'+componentId] = datatopicsJson;
+        //console.log(finalObject);
+    }else {
+        console.error("formattedJsonString is undefined");
+    }
+
+</script>
+
+
+<div id ="reactapp" class="root-selector" feature-name="dataHomepage"  root-name="reactapp" ></div>
+
+
+    <script src="/etc.clientlibs/datasites-spa/clientlibs/clientlib-bready-data.js"></script>
+     
+
+</div>
+
+        
+    </div>
+
+
+</div>
+<div class="container responsivegrid full-row-white-components-48 tui_bready_home_body_content aem-GridColumn aem-GridColumn--default--12">
+  
+
+
+    
+    
+    
+    <div id="container-1f5f7ad367" class="cmp-container">
+        
+        <div class="container responsivegrid touchui-container">
+  
+
+
+    
+    
+    
+    <div id="container-7669fb6b12" class="cmp-container">
+        
+        <div class="title">
+
+
+    
+
+</div>
+<div class="staticlist tui_five_card_topics">
+
+
+
+
+	<div class="explore_topicCard section">
+    <div class="tui_research_title">
+		<h2>Topic Methodology</h2>
+	</div>
+    <div class="tui_explore_topic">     
+        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12">            
+            <div class="aem-GridColumn aem-GridColumn--default--3
+                        aem-GridColumn--phone--6 
+                        aem-GridColumn--tablet--4 
+                        aem-GridColumn--desktop--12">
+                <div class="tui_explore_topicitem">
+                    <a href="/en/businessready/topic/business-entry">
+                        <i class="lp lp-business-entry" aria-hidden="true"></i>
+                        Business Entry
+                    </a>
+					
+                </div>
+            </div>
+		            
+            <div class="aem-GridColumn aem-GridColumn--default--3
+                        aem-GridColumn--phone--6 
+                        aem-GridColumn--tablet--4 
+                        aem-GridColumn--desktop--12">
+                <div class="tui_explore_topicitem">
+                    <a href="https://www.worldbank.org/en/businessready/topic/utility-services">
+                        <i class="lp lp-utility-connections" aria-hidden="true"></i>
+                        Utility Services
+                    </a>
+					
+                </div>
+            </div>
+		            
+            <div class="aem-GridColumn aem-GridColumn--default--3
+                        aem-GridColumn--phone--6 
+                        aem-GridColumn--tablet--4 
+                        aem-GridColumn--desktop--12">
+                <div class="tui_explore_topicitem">
+                    <a href="https://www.worldbank.org/en/businessready/topic/business-location">
+                        <i class="lp lp-business-location" aria-hidden="true"></i>
+                        Business Location
+                    </a>
+					
+                </div>
+            </div>
+		            
+            <div class="aem-GridColumn aem-GridColumn--default--3
+                        aem-GridColumn--phone--6 
+                        aem-GridColumn--tablet--4 
+                        aem-GridColumn--desktop--12">
+                <div class="tui_explore_topicitem">
+                    <a href="https://www.worldbank.org/en/businessready/topic/labor">
+                        <i class="lp lp-labor" aria-hidden="true"></i>
+                        Labor
+                    </a>
+					
+                </div>
+            </div>
+		            
+            <div class="aem-GridColumn aem-GridColumn--default--3
+                        aem-GridColumn--phone--6 
+                        aem-GridColumn--tablet--4 
+                        aem-GridColumn--desktop--12">
+                <div class="tui_explore_topicitem">
+                    <a href="https://www.worldbank.org/en/businessready/topic/financial-services">
+                        <i class="lp lp-financial-services" aria-hidden="true"></i>
+                        Financial Services
+                    </a>
+					
+                </div>
+            </div>
+		            
+            <div class="aem-GridColumn aem-GridColumn--default--3
+                        aem-GridColumn--phone--6 
+                        aem-GridColumn--tablet--4 
+                        aem-GridColumn--desktop--12">
+                <div class="tui_explore_topicitem">
+                    <a href="https://www.worldbank.org/en/businessready/topic/international-trade">
+                        <i class="lp lp-international-trade" aria-hidden="true"></i>
+                        International Trade
+                    </a>
+					
+                </div>
+            </div>
+		            
+            <div class="aem-GridColumn aem-GridColumn--default--3
+                        aem-GridColumn--phone--6 
+                        aem-GridColumn--tablet--4 
+                        aem-GridColumn--desktop--12">
+                <div class="tui_explore_topicitem">
+                    <a href="https://www.worldbank.org/en/businessready/topic/taxation">
+                        <i class="lp lp-taxation" aria-hidden="true"></i>
+                        Taxation
+                    </a>
+					
+                </div>
+            </div>
+		            
+            <div class="aem-GridColumn aem-GridColumn--default--3
+                        aem-GridColumn--phone--6 
+                        aem-GridColumn--tablet--4 
+                        aem-GridColumn--desktop--12">
+                <div class="tui_explore_topicitem">
+                    <a href="https://www.worldbank.org/en/businessready/topic/dispute-resolution">
+                        <i class="lp lp-dispute-resolution" aria-hidden="true"></i>
+                        Dispute Resolution
+                    </a>
+					
+                </div>
+            </div>
+		            
+            <div class="aem-GridColumn aem-GridColumn--default--3
+                        aem-GridColumn--phone--6 
+                        aem-GridColumn--tablet--4 
+                        aem-GridColumn--desktop--12">
+                <div class="tui_explore_topicitem">
+                    <a href="https://www.worldbank.org/en/businessready/topic/market-competition">
+                        <i class="lp lp-market-competition" aria-hidden="true"></i>
+                        Market Competition
+                    </a>
+					
+                </div>
+            </div>
+		            
+            <div class="aem-GridColumn aem-GridColumn--default--3
+                        aem-GridColumn--phone--6 
+                        aem-GridColumn--tablet--4 
+                        aem-GridColumn--desktop--12">
+                <div class="tui_explore_topicitem">
+                    <a href="https://www.worldbank.org/en/businessready/topic/business-insolvency">
+                        <i class="lp lp-business-insolvency" aria-hidden="true"></i>
+                        Business Insolvency
+                    </a>
+					
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+
+
+    
+
+
+ 
+
+</div>
+
+        
+    </div>
+
+
+</div>
+
+        
+    </div>
+
+
+</div>
+<div class="container responsivegrid full-row-gray-components aem-GridColumn aem-GridColumn--default--12">
+  
+
+
+    
+    
+    
+    <div id="container-9c2a3237ff" class="cmp-container">
+        
+        <div class="container responsivegrid touchui-container">
+  
+
+
+    
+    
+    
+    <div id="container-faabceb603" class="cmp-container">
+        
+        <div class="title">
+<div id="title-d0bab5e972" class="cmp-title">
+    <h2 class="cmp-title__text">Highlights</h2>
+</div>
+
+    
+
+</div>
+<div class="carouselcards swiper wbSwiper tui_flexcard_wrapper">
+
+
+	
+
+    
+<link rel="stylesheet" href="/etc.clientlibs/worldbank-bready/components/wbl/columncards/clientlibs/sites.css" type="text/css">
+<link rel="stylesheet" href="/etc.clientlibs/worldbank-bready/components/carouselcards/clientlibs/sites.css" type="text/css">
+<script src="/etc.clientlibs/clientlibs/granite/jquery.js"></script>
+<script src="/etc.clientlibs/worldbank-bready/components/wbl/columncards/clientlibs/sites.js"></script>
+<script src="/etc.clientlibs/worldbank-bready/components/carouselcards/clientlibs/sites.js"></script>
+
+
+ 
+
+
+<div class="swiper-wrapper aem-Grid">
+
+	<!-- tui__primary_card -->
+
+		<div class="teaser tui__primary_card swiper-slide et--6 aem-GridColumn--desktop--3 aem-GridColumn--default--3">
+			<div class="cmp-teaser">
+				<div class="cmp-teaser__image">
+					<div data-cmp-is="image" class="cmp-image">
+						<img src="https://worldbank.scene7.com/is/image/worldbankprod/Manual-and-Guide-1?qlt=90&fmt=webp&resMode=sharp2" loading="lazy" class="image" alt="User manual or Instruction manual book on wooden desk"/>
+					</div>
+				</div>
+				<div class="cmp-teaser__content">
+					
+					
+					<h3 class="cmp-teaser__title"> <a href="https://thedocs.worldbank.org/en/doc/5d79ca28ad482b1a9bc19b9c3a9c9e19-0540012023/original/B-READY-Manual-and-Guide.pdf">B-READY Manual and Guide</a>
+					</h3>
+					
+					<div class="tui_teaser__description">
+						<p><p>The protocols, processes, safeguards, and resources related to the end-to-end production of the B-READY data and reports</p>
+</p>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	
+
+		<div class="teaser tui__primary_card swiper-slide et--6 aem-GridColumn--desktop--3 aem-GridColumn--default--3">
+			<div class="cmp-teaser">
+				<div class="cmp-teaser__image">
+					<div data-cmp-is="image" class="cmp-image">
+						<img src="https://worldbank.scene7.com/is/image/worldbankprod/Methodology-Handbook-1?qlt=90&fmt=webp&resMode=sharp2" loading="lazy" class="image" alt="METHODOLOGY CONTEPT Business team hands at work with financial reports and a laptop"/>
+					</div>
+				</div>
+				<div class="cmp-teaser__content">
+					
+					
+					<h3 class="cmp-teaser__title"> <a href="https://thedocs.worldbank.org/en/doc/bc6351803cb0cd5ad4aba96b7e4aed8c-0540012024/original/B-Ready-Methodology-Handbook-Edition-2.pdf">B-READY Methodology Handbook</a>
+					</h3>
+					
+					<div class="tui_teaser__description">
+						<p><p>The project’s detailed measurement methodology topic by topic</p>
+</p>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	
+
+		<div class="teaser tui__primary_card swiper-slide et--6 aem-GridColumn--desktop--3 aem-GridColumn--default--3">
+			<div class="cmp-teaser">
+				<div class="cmp-teaser__image">
+					<div data-cmp-is="image" class="cmp-image">
+						<img src="https://worldbank.scene7.com/is/image/worldbankprod/B-READY-Coverage-1?qlt=90&fmt=webp&resMode=sharp2" loading="lazy" class="image" alt=" "/>
+					</div>
+				</div>
+				<div class="cmp-teaser__content">
+					
+					
+					<h3 class="cmp-teaser__title"> <a href="/en/businessready/about-us/covered-economies" data-customlink="nl:body content">Economies covered by B-READY</a>
+					</h3>
+					
+					<div class="tui_teaser__description">
+						<p><p>The first three editions of the B-READY pilot report will gradually cover about 170 economies worldwide</p>
+</p>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	
+
+		<div class="teaser tui__primary_card swiper-slide et--6 aem-GridColumn--desktop--3 aem-GridColumn--default--3">
+			<div class="cmp-teaser">
+				<div class="cmp-teaser__image">
+					<div data-cmp-is="image" class="cmp-image">
+						<img src="https://worldbank.scene7.com/is/image/worldbankprod/WBES_logo?qlt=90&fmt=webp&resMode=sharp2" loading="lazy" class="image" alt=" "/>
+					</div>
+				</div>
+				<div class="cmp-teaser__content">
+					
+					
+					<h3 class="cmp-teaser__title"> <a href="https://www.enterprisesurveys.org/en/enterprisesurveys" data-customlink="nl:body content">World Bank Enterprise Surveys (WBES)</a>
+					</h3>
+					
+					<div class="tui_teaser__description">
+						<p><p>World Bank Enterprise Surveys provide the world’s most comprehensive, comparable, and representative firm-level data with global coverage</p>
+</p>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	
+</div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+
+
+    
+
+
+
+
+</div>
+
+        
+    </div>
+
+
+</div>
+
+        
+    </div>
+
+
+</div>
+<div class="container responsivegrid full-row-white-components tui_bready_icon_tabs_container tui_bready_true_false_container aem-GridColumn aem-GridColumn--default--12">
+  
+
+
+    
+    
+    
+    <div id="container-927af64934" class="cmp-container">
+        
+        <div class="container responsivegrid touchui-container">
+  
+
+
+    
+    
+    
+    <div id="container-e58004f529" class="cmp-container">
+        
+        <div class="staticlist">
+
+
+	
+
+
+    
+
+
+
+
+</div>
+
+        
+    </div>
+
+
+</div>
+
+        
+    </div>
+
+
+</div>
+
+    
+</div>
+
+    </div>
+
+    
+
+</div>
+<div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+<div id="experiencefragment-a977a20102" class="cmp-experiencefragment cmp-experiencefragment--business-ready-footer">
+
+  
+
+
+    
+    <div id="container-b4f21e8fcd" class="cmp-container">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="container responsivegrid full-row-gray-components tui_bready_graysection_footer aem-GridColumn aem-GridColumn--default--12">
+  
+
+
+    
+    
+    
+    <div id="container-a96057c39f" class="cmp-container">
+        
+        <div class="container responsivegrid touchui-container">
+  
+
+
+    
+    
+    
+    <div id="container-d82467da5f" class="cmp-container">
+        
+        <div class="title">
+<div id="title-c427d7f9aa" class="cmp-title">
+    <h2 class="cmp-title__text">Additional Information</h2>
+</div>
+
+    
+
+</div>
+<div class="columncontrol">
+
+
+    
+
+
+
+
+
+    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+        
+            <div class="container responsivegrid aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--offset--tablet--0 aem-GridColumn--tablet--none aem-GridColumn--default--6 aem-GridColumn--offset--default--0 aem-GridColumn--default--none aem-GridColumn--desktop--6 aem-GridColumn--offset--desktop--0 aem-GridColumn--desktop--none aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none">
+                
+  
+
+
+    
+    
+    
+    <div id="container-920d73988b" class="cmp-container">
+        
+        <div class="title">
+<div id="title-42b0c43db3" class="cmp-title">
+    <h3 class="cmp-title__text">Authors</h3>
+</div>
+
+    
+
+</div>
+<div class="leadership">
+
+    
+
+
+<div class="aem-Grid">
+	<!-- tui__primary_card -->
+	<div class="teaser tui__primary_card aem-GridColumn--xs--12 aem-GridColumn--phone--12 aem-GridColumn--tablet--6 aem-GridColumn--desktop--3 aem-GridColumn--default--3">
+		<div class="cmp-teaser">
+			<div class="cmp-teaser__image">
+				<div data-cmp-is="image" class="cmp-image">
+					
+						<img src="/content/dam/sites/subnational/img/Norman-Loayza-new.jpg" loading="lazy" class="cmp-image__image" alt="NormanLoayza" title="Norman Loayza"/>
+					
+					
+				</div>
+			</div>
+			<div class="cmp-teaser__content">
+				<h3 class="cmp-teaser__title"> <a href="/en/about/people/n/norman-loayza" data-customlink="nl:body content">Norman Loayza</a> </h3>
+				<div class="cmp-teaser__description">
+					<p>Director, Policy Indicators Group</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- tui__primary_card -->
+	<div class="teaser tui__primary_card aem-GridColumn--xs--12 aem-GridColumn--phone--12 aem-GridColumn--tablet--6 aem-GridColumn--desktop--3 aem-GridColumn--default--3">
+		<div class="cmp-teaser">
+			<div class="cmp-teaser__image">
+				<div data-cmp-is="image" class="cmp-image">
+					
+						<img src="/content/dam/sites/b-ready/subnational/image/bio/High-Resolution.jpg" loading="lazy" class="cmp-image__image" title="Valeria Perotti "/>
+					
+					
+				</div>
+			</div>
+			<div class="cmp-teaser__content">
+				<h3 class="cmp-teaser__title"> <a href="/en/about/people/v/valeria-perotti" data-customlink="nl:body content">Valeria Perotti </a> </h3>
+				<div class="cmp-teaser__description">
+					<p>Manager, Business Ready (B-READY), Global Indicators Group</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="button">
+
+    
+
+<a id="button-3fd2cbc49c" class="cmp-button" href="/en/businessready/about-us/meet-the-team">
+    
+    
+
+    <span class="cmp-button__text">Meet the B-READY Team</span>
+</a>
+</div>
+
+        
+    </div>
+
+
+
+            </div>
+                
+         
+            <div class="container responsivegrid aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--offset--tablet--0 aem-GridColumn--tablet--none aem-GridColumn--default--3 aem-GridColumn--offset--default--0 aem-GridColumn--default--none aem-GridColumn--desktop--3 aem-GridColumn--offset--desktop--0 aem-GridColumn--desktop--none aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none">
+                
+  
+
+
+    
+    
+    
+    <div id="container-0c3ae2dcd8" class="cmp-container">
+        
+        <div class="title">
+<div id="title-beba89ff85" class="cmp-title">
+    <h3 class="cmp-title__text">Contacts</h3>
+</div>
+
+    
+
+</div>
+<div class="text">
+<div id="text-8c89dda5a8" class="cmp-text">
+    <p><b style="">General Inquiries</b></p>
+<p><a href="mailto:b-ready@worldbank.org">b-ready@worldbank.org</a></p>
+<p><b style="">Get the latest updates</b></p>
+
+</div>
+
+    
+
+
+	
+    
+<link rel="stylesheet" href="/etc.clientlibs/worldbank-bready/components/text/clientlibs/site.css" type="text/css">
+<script src="/etc.clientlibs/worldbank-bready/components/text/clientlibs/site.js"></script>
+
+
+ 
+</div>
+<div class="button">
+
+    
+
+<a id="button-169cd615f6" class="cmp-button" href="https://www.worldbank.org/en/newsletter-subscription?bee=true">
+    
+    
+
+    <span class="cmp-button__text">Newsletter subscription</span>
+</a>
+</div>
+
+        
+    </div>
+
+
+
+            </div>
+                
+         
+            <div class="container responsivegrid aem-GridColumn aem-GridColumn--tablet--12 aem-GridColumn--offset--tablet--0 aem-GridColumn--tablet--none aem-GridColumn--default--3 aem-GridColumn--offset--default--0 aem-GridColumn--default--none aem-GridColumn--desktop--3 aem-GridColumn--offset--desktop--0 aem-GridColumn--desktop--none aem-GridColumn--phone--12 aem-GridColumn--offset--phone--0 aem-GridColumn--phone--none">
+                
+  
+
+
+    
+    
+    
+    <div id="container-770da80b7d" class="cmp-container">
+        
+        <div class="socialshare"><div class="subscribe-links-container">
+	<h3>Stay Connected</h3>
+	<ul>
+
+		<li class="subscribe-links">
+			<div class="subscribe-icon">
+				<span class="lp lp-linkln"></span>
+			</div>
+			<div class="subscribe-text">
+				<strong></strong>
+				<a href="https://www.linkedin.com/company/104452843" data-customlink="sm:body content" target="_blank">Linkedin</a>
+				
+				
+			</div>
+		</li>
+	
+
+		<li class="subscribe-links">
+			<div class="subscribe-icon">
+				<span class="lp lp-envelope"></span>
+			</div>
+			<div class="subscribe-text">
+				<strong></strong>
+				
+				<a href="https://www.worldbank.org/en/newsletter-subscription?bee=true" data-customlink="em:body content" data-text="email" target="_blank">Sign up for email updates</a>
+				
+			</div>
+		</li>
+	</ul>
+</div>
+
+    
+</div>
+
+        
+    </div>
+
+
+
+            </div>
+                
+         
+     </div>
+                
+
+
+            
+</div>
+
+        
+    </div>
+
+
+</div>
+
+        
+    </div>
+
+
+</div>
+<div class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
+  
+
+
+    
+    
+    
+    <div id="container-0bd4d3877f" class="cmp-container">
+        
+        <div class="footer"><footer class="cmp-footer">
+    <div class="touchui-container">
+        <div class="ft-social">
+            <div class="ft-social-leftlist">
+
+                <!-- Logo Image Block -->
+                <div class="ft-social-list">
+                    <ul>
+                        <li>
+                            <a href="https://www.worldbank.org/" title="Logo" target="_blank">
+                                <picture>
+                                    <img src="/content/dam/sites/b-ready/subnational/img/2025/WBG-Logo-footer.svg" alt="Logo" width="250" height="50"/>
+                                </picture>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                               
+                <div class="ft-social-list">
+                          <a href="https://www.worldbank.org/en/businessready">
+                        Business Ready
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Back to WBG -->
+            
+        </div>
+
+        <div class="ft-legal">
+            <!-- Copyright -->
+            <div class="ft-legal-list">
+                <ul>
+                    <li><p>©  2026 The World Bank Group, All Rights Reserved.</p></li>
+                </ul>
+            </div>
+
+            <!-- Legal Links -->
+            <div class="ft-legal-list">
+                <ul>
+                    <li>
+                        <a href="https://www.worldbank.org/en/about/legal" target="_self">
+                            Legal
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.worldbank.org/en/about/legal/privacy-notice" target="_self">
+                            Privacy  Notice
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.worldbank.org/en/who-we-are/site-accessibility" target="_self">
+                            Site 	Accessibility
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.worldbank.org/en/access-to-information" target="_self">
+                            Access to Information
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://wbgcmsprod.microsoftcrmportals.com/en-US/anonymous-users/int-fraud-management/create-new-complaint/" target="_self">
+                            Scam Alert
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://wbgcmsprod.microsoftcrmportals.com/en-US/anonymous-users/int-fraud-management/create-new-complaint/" target="_self">
+                            Report Fraud or Corruption
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+</div>
+
+        
+    </div>
+
+
+</div>
+
+    
+</div>
+
+    </div>
+
+    
+
+</div>
+
+    
+</div>
+
+    
+</div>
+
+    </div>
+
+    
+
+</div>
+
+
+
+
+    
+<script src="/etc.clientlibs/worldbank-bready/clientlibs/clientlib-site-publish.js"></script>
+
+
+
+
+            
+    
+    <script src="/etc.clientlibs/worldbank-bready/clientlibs/clientlib-site.js"></script>
+<script src="/etc.clientlibs/worldbank-bready/clientlibs/bready-clientlib-site.js"></script>
+
+
+    
+
+    
+    <script async src="/etc.clientlibs/core/wcm/components/commons/site/clientlibs/container.js"></script>
+<script async src="/etc.clientlibs/core/wcm/components/commons/site/clientlibs/utils.js"></script>
+<script async src="/etc.clientlibs/core/wcm/components/commons/site/clientlibs/imageDynamicMedia.js"></script>
+<script async src="/etc.clientlibs/clientlibs/granite/jquery/granite/csrf.js"></script>
+<script async src="/etc.clientlibs/worldbank-bready/clientlibs/clientlib-base.js"></script>
+
+
+
+
+
+    
+
+    
+
+    
+    
+
+        
+    </body>
+</html>

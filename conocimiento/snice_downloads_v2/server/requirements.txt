@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pandas
+openpyxl
+langchain
+chromadb
+pymupdf
+sentence-transformers
+pydantic
+langchain-community
+langchain-huggingface

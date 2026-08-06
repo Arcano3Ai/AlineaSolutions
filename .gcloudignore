@@ -1,0 +1,14 @@
+.git
+.gitignore
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+env/
+conocimiento/
+flask_output.txt
+flask_log.txt
+flask_err.txt
+reportes/
+reports/

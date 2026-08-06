@@ -1,0 +1,4 @@
+Cargando base de datos de Tarifa: conocimiento_clasificador_experto/tarifas_y_nicos\ID1042_Correlación TIGIE 2020 - TIGIE 2022 (NICO).xlsx
+Indexando normativa: conocimiento_clasificador_experto/normativa/Ley_Aduanera_2026.pdf...
+Indexación completada con éxito.
+INFO:     127.0.0.1:59976 - "GET /api/search?q=acero HTTP/1.1" 200 OK

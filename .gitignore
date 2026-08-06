@@ -1,0 +1,84 @@
+# ======================================
+# Arancelar IA — .gitignore
+# ======================================
+
+# --- Variables de entorno y secretos ---
+.env
+.env.local
+.env.*.local
+instance/master.key
+instance/*.key
+
+# --- Base de datos local (SQLite) ---
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- Virtual environments ---
+venv/
+env/
+ENV/
+.venv/
+.env/
+Lib/
+Scripts/
+
+# --- Logs y archivos temporales Flask ---
+flask_err.txt
+flask_log.txt
+flask_output.txt
+*.log
+
+# --- Reportes PDF generados ---
+reportes/
+reports/
+reporte_*.pdf
+reporte_fracciones.pdf
+
+# --- IDE y editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# --- Archivos de prueba temporales ---
+_test_*.py
+*_test_temp.py
+final_test.py
+
+# --- ChromaDB (bases vectoriales locales grandes) ---
+conocimiento/snice_downloads_v2/chroma_db/
+conocimiento/vucem_knowledge_db/chroma_db/
+
+# --- Archivos grandes de conocimiento (descargar por separado) ---
+# conocimiento/LIGIE-UNIFICADA*.pdf
+# conocimiento/_ligie_text.txt

@@ -1,0 +1,60 @@
+Created At: 2026-07-14T07:12:21Z
+Completed At: 2026-07-14T07:12:21Z
+File Path: `file:///c:/Users/sergi/MisArchivosLocales/Clasificador%20AI/templates/index.html`
+Total Lines: 1497
+Total Bytes: 105252
+Showing lines 1 to 800
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: <!DOCTYPE html>
+2: <html lang="es">
+3: <head>
+4:     <meta charset="UTF-8">
+5:     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6:     <meta name="description" content="Alinea SA de CV - Plataforma de clasificacion arancelaria con inteligencia artificial para comercio exterior en Mexico. Clasificacion HS, LIGIE, VUCEM, CRM y ERP aduanal.">
+7:     <meta name="theme-color" content="#1e3a8a">
+8:     <title>Alinea SA de CV - Ecosistema Corporativo de Comercio Exterior</title>
+9:     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+10:     <!-- PDF.js para extraccion local de archivos -->
+11:     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+12:     <!-- Chart.js para paneles analiticos de la marca -->
+13:     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+14: </head>
+15: <body>
+16:     <!-- Pantalla de Inicio de Sesión Centralizado (Login Central) -->
+17:     <div class="login-screen" id="login-screen">
+18:         <div class="login-card">
+19:             <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Alinea Logo" class="login-logo">
+20:             <div class="login-title">Acceso Centralizado</div>
+21:             <div class="login-subtitle">Ecosistema de Comercio Exterior</div>
+22:             
+23:             <div class="login-error" id="login-error">
+24:                 <span>⚠️</span> <span id="login-error-text">Credenciales incorrectas</span>
+25:             </div>
+26:             
+27:             <form id="login-fo
+<truncated 45283 bytes>
+="grid-column: span 2">
+658:                                 <label for="cp-erp-select">Vincular Artículo de Inventario (ERP - Opcional)</label>
+659:                                 <select id="cp-erp-select" onchange="handleCpErpSelect(this)" style="padding:10px;border-radius:8px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:white;width:100%;outline:none">
+660:                                     <option value="">-- Seleccionar artículo para descontar stock automáticamente --</option>
+661:                                 </select>
+662:                             </div>
+663:                             <div class="form-group" id="cp-qty-group" style="display:none">
+664:                                 <label for="cp-qty">Cantidad a Transportar *</label>
+665:                                 <input type="number" id="cp-qty" min="1" value="1">
+666:                             </div>
+667:                             <div class="form-group">
+668:                                 <label for="cp-origin">Dirección Origen *</label>
+669:                                 <input type="text" id="cp-origin" value="Almacén Fiscal Laredo, Carr. Nacional Km 12, Tamaulipas">
+670:                             </div>
+671:                             <div class="form-group">
+672:                                 <label for="cp-dest">Dirección Destino *</label>
+673:                                 <input type="text" id="cp-dest" value="Bodega Alinea, Av. Universidad 1200, CDMX">
+674:                             </div>
+675:                             <div class="form-group" id="cp-goods-group" style="grid-column: span 2">
+676:                                 <label for="cp-goods">Descripción Mercancía *</label>
+677:                                 <div style="display:flex; gap:8px">
+678:                                     <input type="text" id="cp-goods"
+<truncated 10084 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.

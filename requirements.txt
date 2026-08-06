@@ -1,0 +1,23 @@
+flask>=3.0
+flask-cors>=4.0
+sqlalchemy>=2.0
+pandas>=2.0
+openpyxl>=3.0
+openai>=1.0
+sentence-transformers>=2.0
+transformers>=4.0
+google-generativeai>=0.5
+cryptography>=42.0
+# Generación de PDFs (API fpdf2, no la antigua fpdf)
+fpdf2>=2.7
+# Servidor WSGI para producción (Cloud Run)
+gunicorn>=22.0
+# Variables de entorno desde archivo .env
+python-dotenv>=1.0
+# RAG: LangChain + ChromaDB (usados en classifiers/classifier.py)
+langchain-community>=0.2
+chromadb>=0.5
+# Web scraping (usado en sources/official.py para TARIC, SNICE)
+beautifulsoup4>=4.12
+lxml>=5.0
+
